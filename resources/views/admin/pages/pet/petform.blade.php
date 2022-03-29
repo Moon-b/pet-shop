@@ -18,12 +18,17 @@
       
         <option value="{{$singlepetcategory->id}}">{{$singlepetcategory->pet_categories_name}}</option>
         @endforeach
+</select>
 </div>
 
-    <div class="form-group">
+
+
+<div class="form-group">
     <label for="exampleInputEmail1">pet_breed</label>
     <input name ='pet_breed' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_breed">
 </div>
+ 
+
     <div class="form-group">
     <label for="exampleInputEmail1">pet_size</label>
     <input name ='pet_size' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_size">
@@ -60,6 +65,11 @@
     <div class="form-group">
     <label for="exampleInputEmail1">pet_quality</label>
     <input name ='pet_quality' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_quality">
+  </div>
+
+    <div class="form-group">
+    <label for="exampleInputEmail1">pet_image</label>
+    <input name ='pet_image' type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_image">
  
   </div>
   

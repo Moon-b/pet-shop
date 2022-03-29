@@ -19,8 +19,9 @@
       <th scope="col">pet_weight</th>
       <th scope="col">pet_health</th>
       <th scope="col">pet_quality</th>
+      <th scope="col">pet_image</th>
       <th scope="col">action</th>
-      <th scope="col">action</th>
+     
     </tr>
   </thead>
   <tbody>
@@ -39,11 +40,12 @@
       <td>{{$singlepet->pet_weight}}</td>
       <td>{{$singlepet->pet_health}}</td>
       <td>{{$singlepet->pet_quality}}</td>
+      <td>{{$singlepet->pet_image}}</td>
       <td>{{$singlepet->action}}
-      <a class="btn btn-primary" href="">Edit</a>
-      </td>
-      <td>{{$singlepet->action}}
-      <a class="btn btn-danger" href="">Delete</a>
+      <a class="btn btn-primary" href="{{route('pet.edit', $singlepet->id)}}">Edit</a>
+      
+    
+      <a class="btn btn-danger" href="{{route('pet.delete',$singlepet->id)}}">Delete</a>
       </td>
       
       </tr>

@@ -54,4 +54,6 @@ Route::post('/petcategorypost',[PetCategoryController::class,'petcategorypost'])
 Route::get('/pet',[PetController::class,'pet'])->name('Pet');
 Route::get('/petform',[PetController::class,'petform'])->name('Pet.form');
 Route::post('/petpost',[PetController::class,'petpost'])->name('Pet.post');
-// Route::get('/petdelete(id)',[PetController::class,'delete'])->name('delete');
+Route::get('/pet/edit/{id}',[PetController::class,'petedit'])->name('pet.edit');
+Route::put('/pet/update/{id}',[PetController::class,'petupdate'])->name('pet.update');
+Route::get('/pet/delete/{id}',[PetController::class,'petdelete'])->name('pet.delete');

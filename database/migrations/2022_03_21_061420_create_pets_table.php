@@ -28,6 +28,7 @@ class CreatePetsTable extends Migration
             $table->string('rules');
             $table->string ('pet_health');
             $table->string('pet_quality');
+            $table->string('pet_image')->nullable();
             $table->timestamps();
         });
     }

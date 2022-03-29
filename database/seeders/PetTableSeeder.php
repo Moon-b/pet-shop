@@ -26,6 +26,7 @@ class PetTableSeeder extends Seeder
             'rules'=>'bath in cold water',
             'pet_health'=>'good',
             'pet_quality'=>'great',
+            'pet_categories_id'=>1,
 
         ]);
         Pet::create([
@@ -40,6 +41,7 @@ class PetTableSeeder extends Seeder
             'rules'=>'bath in cold water',
             'pet_health'=>'good',
             'pet_quality'=>'great',
+            'pet_categories_id'=>1,
 
         ]);
     }
