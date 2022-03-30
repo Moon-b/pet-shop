@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PetCategoryController;
 use App\Http\Controllers\PetController;
+use App\Http\Controllers\PetProductCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,9 @@ Route::get('/dashboard', function () {
 });
 
 
-Route::get('/petproductcategory', function () {
-    return view('admin.pages.petproductcategory.petproductcategory');
-});
+// Route::get('/petproductcategory', function () {
+//     return view('admin.pages.petproductcategory.petproductcategory');
+// });
 Route::get('/petproduct', function () {
     return view('admin.pages.petproduct.petproduct');
 });
@@ -57,3 +58,6 @@ Route::post('/petpost',[PetController::class,'petpost'])->name('Pet.post');
 Route::get('/pet/edit/{id}',[PetController::class,'petedit'])->name('pet.edit');
 Route::put('/pet/update/{id}',[PetController::class,'petupdate'])->name('pet.update');
 Route::get('/pet/delete/{id}',[PetController::class,'petdelete'])->name('pet.delete');
+Route::get('/petproductcategory',[PetProductCategoryController::class,'petproductcategory'])->name('PetProductCategory');
+Route::get('/petproductcategoryform',[PetProductCategoryController::class,'petproductcategoryform'])->name('PetProductCategory.form');
+Route::post('/petproductcategorypost',[PetProductCategoryController::class,'petproductcategorypost'])->name('PetProductCategory.post');

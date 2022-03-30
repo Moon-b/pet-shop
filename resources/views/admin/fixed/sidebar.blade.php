@@ -36,7 +36,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{url('/petproductcategory')}}" class="nav-link nav-toggle"> <i data-feather="calendar"></i>
+                                <a href="{{route('PetProductCategory')}}" class="nav-link nav-toggle"> <i data-feather="calendar"></i>
                                     <span class="title">Pet Product Category</span>
                                 </a>
                             </li>

@@ -3,8 +3,8 @@
                 <!-- logo start -->
                 <div class="page-logo">
                     <a href="index.html">
-                        <span class="logo-icon material-icons fa-rotate-45"></span>
-                        <span class="logo-default">Pet Shop BD</span> </a>
+                        <span class=""></span>
+                        <span class="">Pet Shop BD</span> </a>
                 </div>
                 <!-- logo end -->
                 

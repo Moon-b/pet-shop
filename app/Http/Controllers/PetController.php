@@ -20,6 +20,23 @@ class PetController extends Controller
     }
 public function petpost(Request $request){
     //  dd($request->all());
+    $request->validate([
+        'pet_name'=>'required',
+        'pet_categories_id'=>'required',
+        'pet_breed'=>'required',
+        'pet_size'=>'required',
+        'pet_color'=>'required',
+        'pet_life_span'=>'required',
+        'pet_age'=>'required',
+        'pet_height'=>'required',
+        'rules'=>'required',
+        'pet_weight'=>'required',
+        
+        'pet_quality'=>'required',
+        'pet_image'=>'image'
+    
+
+    ]);
     $filename = null;
     if ($request->hasFile('pet_image')) {
         $file=$request->file('pet_image');
@@ -57,7 +74,14 @@ public function petpost(Request $request){
 }
 public function petupdate(Request $request,$id){
 
-$pets=Pet::find($id);
+    $pets=Pet::find($id);
+    $filename=$pets->pet_image;
+    // if ($request->hasFile('pet_image')) {
+    //     $file=$request->file('pet_image');
+    //     $filename = date('Ymdhis').'.'.$file->getClientOriginalExtension();
+    //     $file ->storeAs('/uploads',$filename);
+    // }
+if($pets){
 $pets->update([
     
     'pet_name'=>$request->pet_name,
@@ -72,9 +96,15 @@ $pets->update([
     'pet_weight'=>$request->pet_weight,
     'pet_health'=>$request->pet_health,
     'pet_quality'=>$request->pet_quality,
+    'pet_image'=>$filename,
 
 ]);
  return redirect()->route(route:'Pet');
+}
+else
+{
+    return redirect()->back();
+}
 }
 public function petdelete($id){
     $pets=Pet::find($id);

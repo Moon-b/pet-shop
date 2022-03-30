@@ -8,7 +8,7 @@
 
   <div class="form-group">
     <label for="exampleInputEmail1">pet_name</label>
-    <input name ='pet_name' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_name">
+    <input required name ='pet_name' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_name">
 </div>
 <div class="form-group">
     <label for="pet_categories">pet categories name</label>
@@ -25,22 +25,22 @@
 
 <div class="form-group">
     <label for="exampleInputEmail1">pet_breed</label>
-    <input name ='pet_breed' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_breed">
+    <input required name ='pet_breed' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_breed">
 </div>
  
 
     <div class="form-group">
     <label for="exampleInputEmail1">pet_size</label>
-    <input name ='pet_size' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_size">
+    <input required name ='pet_size' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_size">
 </div>
     <div class="form-group">
     <label for="exampleInputEmail1">pet_color</label>
-    <input name ='pet_color' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_color">
+    <input required name ='pet_color' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_color">
 
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">pet_life_span</label>
-    <input name ='pet_life_span' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_life_span">
+    <input required name ='pet_life_span' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_life_span">
 </div>
     <div class="form-group">
     <label for="exampleInputEmail1">pet_age</label>
@@ -69,7 +69,7 @@
 
     <div class="form-group">
     <label for="exampleInputEmail1">pet_image</label>
-    <input name ='pet_image' type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_image">
+    <input  required name ='pet_image' type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_image">
  
   </div>
   

@@ -1,5 +1,6 @@
 @extends('welcome')
 @section('content')
-<h1>Pet Product </h1>
+<h1><b><u>Pet Product</u></b> </h1>
+
 
 @endsection

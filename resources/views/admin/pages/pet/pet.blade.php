@@ -40,7 +40,9 @@
       <td>{{$singlepet->pet_weight}}</td>
       <td>{{$singlepet->pet_health}}</td>
       <td>{{$singlepet->pet_quality}}</td>
-      <td>{{$singlepet->pet_image}}</td>
+      <td>
+        <img width="150px" src="{{url('/uploads',$singlepet->pet_image)}}" alt="Product image">
+      </td>
       <td>{{$singlepet->action}}
       <a class="btn btn-primary" href="{{route('pet.edit', $singlepet->id)}}">Edit</a>
       

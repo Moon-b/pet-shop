@@ -1,7 +1,7 @@
 @extends('welcome')
 @section('content')
 
-<form action="{{route('pet.update',$pets->id )}}" method="POST" >
+<form action="{{route('pet.update',$pets->id )}}" method="POST" enctype="multipart/form-data">
     @method('PUT')
     @csrf
    
@@ -63,6 +63,11 @@
     <div class="form-group">
     <label for="exampleInputEmail1">pet_quality</label>
     <input value="{{$pets->pet_quality}}"name ='pet_quality' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_quality">
+ 
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">pet_image</label>
+    <input name ='pet_image' type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_image">
  
   </div>
   

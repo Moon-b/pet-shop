@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PetProductCategory extends Model
 {
     use HasFactory;
-    // protected $fillable=['pet_product_categories_name','details','status'];
-    protected $gaurded=[];
+    protected $fillable=['pet_product_categories_name','details','status'];
+    // protected $gaurded=[];
 }
