@@ -2,7 +2,7 @@
 @section('content')
 <h1><b>Pet</h1></b>
 <!-- <div class="row" style="margin-top: 75px;"> -->
-<a href="{{route('Pet.form')}}" class="btn btn-success"  style="float: right;font-size:18px; ">Add New Pet </a>
+<a href="{{route('Pet.form')}}" class="btn btn-success "  style="float: right;font-size:18px; ">Add New Pet </a>
 <table class="table">
   <thead>
     <tr>

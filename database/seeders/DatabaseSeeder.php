@@ -18,5 +18,9 @@ class DatabaseSeeder extends Seeder
         $this ->call(PetTableSeeder::class);
         $this ->call(PetProductCategoryTableSeeder::class);
         $this ->call(PetProductTableSeeder::class);
+        $this ->call(CustomerTableSeeder::class);
+        $this ->call(DonationListTableSeeder::class);
+        $this ->call(AdoptionListTableSeeder::class);
+        $this ->call(UserTableSeeder::class);
     }
 }
