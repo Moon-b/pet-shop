@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th scope="col">id</th>
+      <th scope="col">pet_product_categories_name</th>
       <th scope="col">pet_product_name</th>
       <th scope="col">pet_product_picture</th>
       <th scope="col">pet_product_details</th>
@@ -21,18 +22,22 @@
     @foreach($petproducts as $singlepetproduct)
       <tr>
         <td>{{$singlepetproduct->id}}</td>
+        <td>{{$singlepetproduct->petproduct->pet_product_categories_name}}</td>
          <td>{{$singlepetproduct->pet_product_name}}</td>
-        <td>{{$singlepetproduct->pet_product_picture}}</td>
+         <td>
+        <img width="150px" src="{{url('/uploads',$singlepetproduct->pet_product_picture)}}" alt="product image">
+      </td>
+        <!-- <td>{{$singlepetproduct->pet_product_picture}}</td> -->
         <td>{{$singlepetproduct->pet_product_details}}</td>
         <td>{{$singlepetproduct->pet_product_price}}</td>
         <td>{{$singlepetproduct->pet_product_status}}</td>
         
-        <td>{{$singlepetproduct->edit}}
-        <a  class='btn btn-primary' href="">Edit</a>  
-</td>
-        <td>{{$singlepetproduct->delete}}
-        <a class='btn btn-success' href="">Delete</a>
-</td>
+        <td>
+        <a  class='btn btn-primary' href="{{route('PetProduct.edit',$singlepetproduct->id)}}">Edit</a>  
+        </td>
+        <td>
+        <a class='btn btn-success' href="{{route('PetProduct.delete',$singlepetproduct->id)}}">Delete</a>
+        </td>
         <!-- <td>{{$singlepetproduct->view}}
         <a class="btn btn-danger" href="">View</a>
         </td> -->

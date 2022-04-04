@@ -12,11 +12,10 @@ class CustomerController extends Controller
         return view('admin.pages.customer.customer',compact('customers'));
 }
 public function customerform(){
-    $customers=Customer::all();
-        
-    return view('admin.pages.customer.customerform',compact('customers'));
+
+    return view('admin.pages.customer.customerform');
 }
-public function customerpost(Request $request){
+public function customerpost (Request $request){
     // dd($request->all());
     Customer::create([
         'customer_image'=>$request->customer_image,

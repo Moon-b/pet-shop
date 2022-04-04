@@ -15,6 +15,7 @@ class CreatePetProductsTable extends Migration
     {
         Schema::create('pet_products', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pet_product_categories_id');
             $table->string('pet_product_name');
             $table->string('pet_product_details');
             $table->string('pet_product_picture');

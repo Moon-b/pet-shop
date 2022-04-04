@@ -9,7 +9,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdoptionListController;
 use App\Http\Controllers\DonationListController;
 use App\Http\Controllers\CustomerController;
-
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderDetailsController;
+use App\Http\Controllers\frontend\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,6 +73,9 @@ Route::post('/petproductcategorypost',[PetProductCategoryController::class,'petp
 Route::get('/petproduct',[PetProductController::class,'petproduct'])->name('PetProduct');
 Route::get('/petproductform',[PetProductController::class,'petproductform'])->name('PetProduct.form');
 Route::post('/petproductpost',[PetProductController::class,'petproductpost'])->name('PetProduct.post');
+Route::get('/petproduct/edit{id}',[PetProductController::class,'petproductedit'])->name('PetProduct.edit');
+Route::put('/petproductupdate/{id}',[PetProductController::class,'petproductupdate'])->name('PetProduct.update');
+Route::post('/petproduct/delete{id}',[PetProductController::class,'petproductdelete'])->name('PetProduct.delete');
 Route::get('/logout',[UserController::class,'logout'])->name('logout');
 Route::get('/donationlist',[DonationListController::class,'donationlist'])->name('DonationList');
 Route::get('/donationlistform',[DonationListController::class,'donationlistform'])->name('DonationList.form');
@@ -85,4 +90,8 @@ Route::get('/customerform',[CustomerController::class,'customerform'])->name('Cu
 Route::get('/customerpost',[CustomerController::class,'customerpost'])->name('Customer.post');
 Route::get('/customerdelete/{id}',[CustomerController::class,'customerdelete'])->name('Customer.delete');
 Route::get('/customerview',[CustomerController::class,'customerview'])->name('Customer.view');
+Route::get('/order',[OrderController::class,'order'])->name('Order');
+Route::get('/orderdetails',[OrderDetailsController::class,'orderdetails'])->name('OrderDetails');
 });
+
+Route::get('/website',[HomeController::class,'home'])->name('home');

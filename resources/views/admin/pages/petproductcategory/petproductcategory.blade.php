@@ -3,7 +3,8 @@
 <h1><b><u>Pet Product Category</u></b></h1>
 <div class="row" style="margin-top: 75px;">
 <!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> -->
-<a href="{{route('PetProductCategory.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a>
+<!-- <a href="{{route('PetProductCategory.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> -->
+<a href="{{route('PetProductCategory.form')}}" class="btn btn-success"  style="float: right;font-size:18px; ">Add New Pet Product Category </a>
   <div class="col-12">
   <table class="table">
   <thead>

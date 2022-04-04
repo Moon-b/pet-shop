@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
         $this ->call(DonationListTableSeeder::class);
         $this ->call(AdoptionListTableSeeder::class);
         $this ->call(UserTableSeeder::class);
+        $this ->call(OrderTableSeeder::class);
+        $this ->call(OrderDetailsTableSeeder::class);
     }
 }

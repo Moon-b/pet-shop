@@ -64,7 +64,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{url('/order')}}" class="nav-link nav-toggle"> <i data-feather="calendar"></i>
+                                <a href="{{route('Order')}}" class="nav-link nav-toggle"> <i data-feather="calendar"></i>
                                     <span class="title">Order</span>
                                 </a>
                             </li>

@@ -5,7 +5,12 @@
 <h2><b>Pet Category</b></h1>
 <div class="row" style="margin-top: 75px;">
 <!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet</h2></a> -->
-<a href="{{route('PetCategory.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Pet Category</h2></a>
+
+  <div style="display: flex; justify-content: flex-end ; padding-right: 127px;">
+  <a href="{{route('PetCategory.form')}}" class="btn btn-success" style="float: right; width: 18%"><span style="font-size: 15px;">Add New Pet Category</span></a>
+  </div>
+
+
   <div class="col-12">
   <table class="table">
   <thead>
