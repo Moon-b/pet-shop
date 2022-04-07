@@ -76,11 +76,11 @@ public function petupdate(Request $request,$id){
 
     $pets=Pet::find($id);
     $filename=$pets->pet_image;
-    // if ($request->hasFile('pet_image')) {
-    //     $file=$request->file('pet_image');
-    //     $filename = date('Ymdhis').'.'.$file->getClientOriginalExtension();
-    //     $file ->storeAs('/uploads',$filename);
-    // }
+    if ($request->hasFile('pet_image')) {
+        $file=$request->file('pet_image');
+        $filename = date('Ymdhis').'.'.$file->getClientOriginalExtension();
+        $file ->storeAs('/uploads',$filename);
+    }
 if($pets){
 $pets->update([
     

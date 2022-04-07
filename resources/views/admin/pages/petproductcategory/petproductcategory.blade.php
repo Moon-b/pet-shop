@@ -25,10 +25,10 @@
         <td>{{$singlepetproductcategory->details}}</td>
         <td>{{$singlepetproductcategory->status}}</td>
           <td>{{$singlepetproductcategory->action}}
-        <a  class='btn btn-primary' href="">Edit</a>  
+        <a  class='btn btn-primary' href="{{route('PetProductCategory.edit',$singlepetproductcategory->id)}}">Edit</a>  
         
         
-        <a class='btn btn-success' href="">Delete</a>
+        <a class='btn btn-success' href="{{route('PetProductCategory.delete',$singlepetproductcategory->id)}}">Delete</a>
         </td>
       </tr>
     @endforeach

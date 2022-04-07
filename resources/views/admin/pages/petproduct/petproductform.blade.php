@@ -13,7 +13,7 @@
 @csrf
 <form>
 <div class="form-group">
-    <label for="petproduct">pet categories name</label>
+    <label for="petproduct">pet product categories name</label>
     <select class="form-control"name="pet_product_categories_id" id="">
        
     @foreach($petproductcategories as $singlepetproductcategory)

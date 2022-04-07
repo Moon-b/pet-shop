@@ -17,8 +17,13 @@ public function customerform(){
 }
 public function customerpost (Request $request){
     // dd($request->all());
+    $filename = null;
+    if ($request->hasFile('customer_image')) {
+        $file=$request->file('customer_image');
+        $filename = date('Ymdhis').'.'.$file->getClientOriginalExtension();
+        $file ->storeAs('/uploads',$filename);
     Customer::create([
-        'customer_image'=>$request->customer_image,
+        'customer_image'=>$filename,
             'customer_first_name'=>$request->customer_first_name,
             'customer_last_name'=>$request->customer_last_name,
             'customer_address'=>$request->customer_address,
@@ -30,6 +35,7 @@ public function customerpost (Request $request){
     ]);
     return redirect()->route(route:'Customer');
          
+}
 }
 public function customeredit($id){
     // $categories = Category::all(); 
@@ -45,6 +51,13 @@ public function customeredit($id){
 public function customerupdate(Request $request,$id){
     // dd($request->all());
     $customers = Customer::find($id);
+    
+    $filename=$customers->customer_image;
+    if ($request->hasFile('customer_image')) {
+        $file=$request->file('customer_image');
+        $filename = date('Ymdhis').'.'.$file->getClientOriginalExtension();
+        $file ->storeAs('/uploads',$filename);
+    }
     if ($customers) {
         $customers->update([
             'customer_image'=>$request->customer_image,

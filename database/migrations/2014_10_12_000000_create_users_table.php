@@ -20,6 +20,15 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table-> string ('user_image')->nullable();
+            // $table->string('user_first_name');
+            // $table->string('user_last_name');
+            $table->string('user_address');
+            $table->string('user_country');
+            $table->string('user_city');
+            $table->string('user_phone')->nullable();
+            // $table->string('user_email')->nullable();
+            $table->string('roll')->default('user');
             $table->timestamps();
         });
     }
@@ -33,4 +42,9 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
     }
+   
+    
 }
+
+
+

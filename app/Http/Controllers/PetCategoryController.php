@@ -28,4 +28,47 @@ class PetCategoryController extends Controller
         return redirect()->route(route:'PetCategory');
              
     }
-}
+    public function petcategoryedit ($id){
+        // $petcategories =PetCategory::all(); 
+        $petcategories = PetCategory::find($id);
+        if ($petcategories) {
+        return view('admin.pages.petcategory.petcategoryedit',compact('petcategories'));
+        } else {
+            return redirect()->back();
+        }
+        
+    }
+    public function petcategoryupdate(Request $request,$id){
+    
+        $petcategories=PetCategory::find($id);
+        
+        
+    if($petcategories){
+    $petcategories->update([
+        'pet_categories_name'=>$request->pet_categories_name,
+            'details'=>$request->details,
+            'status'=>$request->status,
+        
+    
+    ]);
+     return redirect()->route(route:'PetCategory');
+    }
+    else
+    {
+        return redirect()->back();
+    }
+    }
+    public function petcategorydelete($id){
+        $petcategories=PetCategory::find($id);
+        if($petcategories){
+            $petcategories->delete();
+            return redirect()->back();
+        }
+        else
+        {
+            return redirect()->back();
+        }
+    }
+    
+    }
+

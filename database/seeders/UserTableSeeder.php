@@ -17,6 +17,14 @@ class UserTableSeeder extends Seeder
 'name'=>'Munmun',
 'email'=>'munmun.iubat12@gmail.com',
 'password'=>bcrypt('1234'),
+'user_image'=>'mun.jpg',
+
+    
+        'user_address'=>'sector 10,road 12 ,house no:58',
+        'user_country'=>'Bangladesh',
+        'user_city'=>'Uttara,Dhaka',
+        'user_phone'=>'01879879870',
+        'roll'=>'admin',
         ]);
     }
 }

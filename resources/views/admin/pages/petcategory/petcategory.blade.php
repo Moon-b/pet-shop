@@ -7,7 +7,7 @@
 <!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet</h2></a> -->
 
   <div style="display: flex; justify-content: flex-end ; padding-right: 127px;">
-  <a href="{{route('PetCategory.form')}}" class="btn btn-success" style="float: right; width: 18%"><span style="font-size: 15px;">Add New Pet Category</span></a>
+  <a href="{{route('PetCategory.form')}}" class="btn btn-success" style="float: right; width: 28%"><span style="font-size: 15px;">Add New Pet Category</span></a>
   </div>
 
 
@@ -31,11 +31,12 @@
         <td>{{$singlepetcategory->details}}</td>
         <td>{{$singlepetcategory->status}}</td>
         <td>{{$singlepetcategory->action}}
-        <a  class='btn btn-primary' href="">Edit</a>  
+        <a  class='btn btn-primary' href="{{route('PetCategory.edit',$singlepetcategory->id)}}">Edit</a>  
         
         
-        <a class='btn btn-success' href="">Delete</a>
+        <a class='btn btn-success' href="{{route('PetCategory.delete',$singlepetcategory->id)}}">Delete</a>
         </td>
+        
       </tr>
     @endforeach
   </tbody>

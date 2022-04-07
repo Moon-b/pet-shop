@@ -12,6 +12,11 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderDetailsController;
 use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\PostController;
+use App\Http\Controllers\PostReciveController;
+use App\Http\Controllers\frontend\SignupController;
+use App\Http\Controllers\frontend\UserLoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,40 +63,89 @@ Route::get('/orderdetails', function () {
 Route::get('/payment', function () {
     return view('admin.pages.payment.payment');
 });
+
+
 Route::get('/petcategory',[PetCategoryController::class,'petcategory'])->name('PetCategory');
 Route::get('/petcategoryform',[PetCategoryController::class,'petcategoryform'])->name('PetCategory.form');
 Route::post('/petcategorypost',[PetCategoryController::class,'petcategorypost'])->name('PetCategory.post');
+Route::get('/petcategory/edit/{id}',[PetCategoryController::class,'petcategoryedit'])->name('PetCategory.edit');
+Route::put('/petcategory/update/{id}',[PetCategoryController::class,'petcategoryupdate'])->name('PetCategory.update');
+Route::get('/petcategory/delete/{id}',[PetCategoryController::class,'petcategorydelete'])->name('PetCategory.delete');
+
+
+
 Route::get('/pet',[PetController::class,'pet'])->name('Pet');
 Route::get('/petform',[PetController::class,'petform'])->name('Pet.form');
 Route::post('/petpost',[PetController::class,'petpost'])->name('Pet.post');
 Route::get('/pet/edit/{id}',[PetController::class,'petedit'])->name('pet.edit');
 Route::put('/pet/update/{id}',[PetController::class,'petupdate'])->name('pet.update');
 Route::get('/pet/delete/{id}',[PetController::class,'petdelete'])->name('pet.delete');
+
+
+
+
 Route::get('/petproductcategory',[PetProductCategoryController::class,'petproductcategory'])->name('PetProductCategory');
 Route::get('/petproductcategoryform',[PetProductCategoryController::class,'petproductcategoryform'])->name('PetProductCategory.form');
 Route::post('/petproductcategorypost',[PetProductCategoryController::class,'petproductcategorypost'])->name('PetProductCategory.post');
+Route::get('/petproductcategory/edit/{id}',[PetProductCategoryController::class,'petproductcategoryedit'])->name('PetProductCategory.edit');
+Route::put('/petproductcategory/update/{id}',[PetProductCategoryController::class,'petproductcategoryupdate'])->name('PetProductCategory.update');
+Route::get('/petproductcategory/delete/{id}',[PetProductCategoryController::class,'petproductcategorydelete'])->name('PetProductCategory.delete');
+
+
+
+
 Route::get('/petproduct',[PetProductController::class,'petproduct'])->name('PetProduct');
 Route::get('/petproductform',[PetProductController::class,'petproductform'])->name('PetProduct.form');
 Route::post('/petproductpost',[PetProductController::class,'petproductpost'])->name('PetProduct.post');
 Route::get('/petproduct/edit{id}',[PetProductController::class,'petproductedit'])->name('PetProduct.edit');
 Route::put('/petproductupdate/{id}',[PetProductController::class,'petproductupdate'])->name('PetProduct.update');
-Route::post('/petproduct/delete{id}',[PetProductController::class,'petproductdelete'])->name('PetProduct.delete');
+Route::get('/petproduct/delete{id}',[PetProductController::class,'petproductdelete'])->name('PetProduct.delete');
+
+
 Route::get('/logout',[UserController::class,'logout'])->name('logout');
+
+
 Route::get('/donationlist',[DonationListController::class,'donationlist'])->name('DonationList');
 Route::get('/donationlistform',[DonationListController::class,'donationlistform'])->name('DonationList.form');
 Route::post('/donationlistpost',[DonationListController::class,'donationlistpost'])->name('DonationList.post');
+
+
+
 Route::get('/adoptionlist',[AdoptionListController::class,'adoptionlist'])->name('AdoptionList');
 Route::get('/adoptionlistform',[AdoptionListController::class,'adoptionlistform'])->name('AdoptionList.form');
 Route::post('/adoptionlistpost',[AdoptionListController::class,'adoptionlistpost'])->name('AdoptionList.post');
-Route::get('/customer',[CustomerController::class,'customer'])->name('Customer');
-Route::get('/customeredit/{id}',[CustomerController::class,'customeredit'])->name('Customer.edit');
-Route::get('/customerupdate',[CustomerController::class,'customerupdate'])->name('Customer.update');
-Route::get('/customerform',[CustomerController::class,'customerform'])->name('Customer.form');
-Route::get('/customerpost',[CustomerController::class,'customerpost'])->name('Customer.post');
-Route::get('/customerdelete/{id}',[CustomerController::class,'customerdelete'])->name('Customer.delete');
-Route::get('/customerview',[CustomerController::class,'customerview'])->name('Customer.view');
+
+
+Route::get('/user',[UserController::class,'user'])->name('user');
+Route::get('/useredit/{id}',[UserController::class,'useredit'])->name('user.edit');
+Route::put('/userupdate/{id}',[UserController::class,'userupdate'])->name('user.update');
+Route::get('/userform',[UserController::class,'userform'])->name('user.form');
+
+Route::get('/userdelete/{id}',[UserController::class,'userdelete'])->name('user.delete');
+Route::get('/userview',[UserController::class,'userview'])->name('user.view');
+
+
+
+
 Route::get('/order',[OrderController::class,'order'])->name('Order');
 Route::get('/orderdetails',[OrderDetailsController::class,'orderdetails'])->name('OrderDetails');
+
+Route::get('/post/receive',[PostReciveController::class,'postreceive'])->name('Postreceive');
+// Route::get('/postreceives',[PostReceiveController::class,'postreceives'])->name('Postreceives');
 });
 
+Route::get('/post',[PostController::class,'post'])->name('Post');
+Route::get('/postcreate',[PostController::class,'postcreate'])->name('Post.create');
+Route::post('/postform',[PostController::class,'postform'])->name('Post.form');
+
+
 Route::get('/website',[HomeController::class,'home'])->name('home');
+Route::get('/cart', function () {
+    return view('frontend.pages.cart.cart');
+});
+Route::get('/signup',[SignupController::class,'signup'])->name('signup');
+Route::post('/userpost',[SignupController::class,'userpost'])->name('user.post');
+
+Route::get('/userlogin',[UserLoginController::class,'userlogin'])->name('userlogin');
+Route::post('/douserlogin',[UserLoginController::class,'douserlogin'])->name('douserlogin');
+Route::get('/douserlogout',[UserLoginController::class,'douserlogout'])->name('douserlogout');
