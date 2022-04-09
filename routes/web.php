@@ -149,3 +149,4 @@ Route::post('/userpost',[SignupController::class,'userpost'])->name('user.post')
 Route::get('/userlogin',[UserLoginController::class,'userlogin'])->name('userlogin');
 Route::post('/douserlogin',[UserLoginController::class,'douserlogin'])->name('douserlogin');
 Route::get('/douserlogout',[UserLoginController::class,'douserlogout'])->name('douserlogout');
+Route::get('/product/view/{id}',[HomeController::class,'showProduct'])->name('product.view');
