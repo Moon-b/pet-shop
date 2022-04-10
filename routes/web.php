@@ -16,6 +16,7 @@ use App\Http\Controllers\frontend\PostController;
 use App\Http\Controllers\PostReciveController;
 use App\Http\Controllers\frontend\SignupController;
 use App\Http\Controllers\frontend\UserLoginController;
+use App\Http\Controllers\frontend\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -150,3 +151,9 @@ Route::get('/userlogin',[UserLoginController::class,'userlogin'])->name('userlog
 Route::post('/douserlogin',[UserLoginController::class,'douserlogin'])->name('douserlogin');
 Route::get('/douserlogout',[UserLoginController::class,'douserlogout'])->name('douserlogout');
 Route::get('/product/view/{id}',[HomeController::class,'showProduct'])->name('product.view');
+
+
+
+Route::get('/cart/view',[CartController::class,'viewCart'])->name('cart.view');
+Route::get('/cart/add/{id}',[CartController::class,'addToCart'])->name('cart.add');
+Route::get('/cart/clear',[CartController::class,'clearCart'])->name('cart.clear');

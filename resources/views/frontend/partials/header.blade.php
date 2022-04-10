@@ -30,7 +30,16 @@
                                          <li><a href="{{route('Post.create')}}">Create Post</a></li>
                                          
                                      </ul>
+                                     
                                  </li>
+                                </li>
+                               
+                        <li class="nav-item">
+                        <!--  -->
+                        
+                        <a style="color:white" href="{{route('cart.view')}}">Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</a>
+                    </li>
+                    
                                  <li class=""><a href="{{route('signup')}}">Signup</a>
                                  </li>
                                  @if(auth()->user())
@@ -50,7 +59,7 @@
                   <div class="col-xl-3 col-lg-5 col-md-7 col-sm-3 col-3">
                      <div class="header-right d-flex align-items-center justify-content-end">
                      <div class="cart-wrapper mr-30">
-                           <a href="javascript:void(0);" class="cart-toggle-btn">
+                           <a href="{{route('cart.view')}}" class="cart-toggle-btn">
                               <div class="header__cart-icon p-relative">
                                  <svg xmlns="http://www.w3.org/2000/svg" width="19.988" height="19.988"
                                     viewBox="0 0 19.988 19.988">
@@ -66,7 +75,7 @@
                                           transform="translate(-2.67 -8.01)" fill="#141517" />
                                     </g>
                                  </svg>
-                                 <span class="item-number">3</span>
+                                 <span class="item-number">{{session()->has('cart') ? count(session()->get('cart')):0}}</span>
                               </div>
                            </a>
                         </div>

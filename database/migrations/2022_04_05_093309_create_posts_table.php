@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->foreignId('pet_id');
             $table->foreignId('user_id');
+            $table->foreignId('recever_id');
             $table->string('title')->nullable();
             $table->string('details')->nullable();
             $table->string('type')->nullable();
