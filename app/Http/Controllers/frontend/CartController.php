@@ -74,5 +74,13 @@ class CartController extends Controller
         session()->forget('cart');
         return redirect()->back()->with('message','Cart Clear');
     } 
+    public function deleteCart($product_id)
+    {
+        $updatedCart=session()->get('cart');
+        unset($updatedCart[$product_id]);
+        session()->put('cart',$updatedCart);
+
+        return redirect()->back()->with('message','Item deleted.');
+    }
 
 }
