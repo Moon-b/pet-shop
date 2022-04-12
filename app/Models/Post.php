@@ -12,6 +12,6 @@ class Post extends Model
     protected $guarded=[];
     public function pet()
     {
-        return $this->belongsTo(Pet::class,'pet_id','id');
+        return $this->belongsTo(PetCategory::class,'pet_category_id','id');
     }
 }

@@ -82,5 +82,14 @@ class CartController extends Controller
 
         return redirect()->back()->with('message','Item deleted.');
     }
+    public function updateCart(Request $request,$product_id)
+    {
+        $getCart=session()->get('cart');
+        $getCart[$product_id]['quantity']=$request->quantity;
+        $getCart[$product_id]['subtotal']=(int)$request->quantity*(float)$getCart[$product_id]['price'];
+
+        session()->put('cart',$getCart);
+        return redirect()->back()->with('message','Product Quantity Updated');
+    }
 
 }

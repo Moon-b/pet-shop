@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
-use App\Models\Pet;
+use App\Models\PetCategory;
 
 
 class PostReciveController extends Controller
@@ -18,7 +18,15 @@ class PostReciveController extends Controller
         $posts=Post::all();
         return view('admin.pages.post.postreceive',compact('posts'));
     }
+    public function postapprove($id){
+        $post = Post::find($id)->update([
+            'status'=>'approved'
+        ]);
+        return redirect()->back();
+    }
 }
+
+    
    
     // public function postreceives(Request $request){
     //     //   dd($request->all());

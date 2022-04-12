@@ -5,13 +5,17 @@
 <form action="{{route('Post.form')}}" method="POST"enctype="multipart/form-data">
 @csrf
 <div class="form-group">
-    <label for="petadopt">Pet Name</label>
-    <select class="form-control"name="pet_id" id="">
-    @foreach($pets as $singlepet)
-        <option value="{{$singlepet->id}}">{{$singlepet->pet_name}}</option>
+    <label for="petadopt">Pet Category Name</label>
+    <select class="form-control"name="pet_category" id="">
+    @foreach($petcategories as $singlepetcategory)
+        <option value="{{$singlepetcategory->id}}">{{$singlepetcategory->pet_categories_name}}</option>
     @endforeach
     </select>
 </div>
+<div class="form-group">
+    <label for="exampleInputEmail1">Picture</label>
+    <input required name ='pet_img' type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter donation form date">
+  </div>
 <div class="form-group">
     <label for="exampleInputEmail1">TItle</label>
     <input required name ='title' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter donation form date">
@@ -28,10 +32,10 @@
   
     </select>
 </div>
-<div class="form-group">
+<!-- <div class="form-group">
     <label for="exampleInputEmail1">status</label>
     <input required name ='status' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter status">
-  </div>
+  </div> -->
   <div class="form-group">
     <label for="exampleInputEmail1"> form date</label>
     <input required name ='form_date' type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter form date">

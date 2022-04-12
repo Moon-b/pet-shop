@@ -59,18 +59,26 @@ https://templatemo.com/tm-546-sixteen-clothing
     <!-- ***** Preloader End ***** -->
 
     @include('frontend.partials.header')
+    
     @include('frontend.partials.banner')
+
+   
+    <!-- @yield('slider') -->
 
     <div class="latest-products">
       <div class="container">
-        <div class="row">
+        <div class="row" >
           <div class="col-md-12">
             <div class="section-heading">
               
             </div>
+            
           </div>
-          
+         
           @yield('product')
+    
+        
+       
           
         </div>
       </div>

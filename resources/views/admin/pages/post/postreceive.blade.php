@@ -11,6 +11,7 @@
     <tr>
       <th scope="col">id</th>
       <th scope="col">pet_name</th>
+      <th scope="col">picture</th>
       
       <th scope="col">title</th>
       <th scope="col">details</th>
@@ -31,7 +32,8 @@
       <th scope="row">{{$post->id}}</th>
       
     
-        <td>{{$post->pet->pet_name}}</td>
+        <td>{{$post->pet->pet_categories_name}}</td>
+        <td><img width="150px" src="{{url('/uploads',$post->picture)}}" alt=""></td>
         
       <td>{{$post->title}}</td>
       <td>{{$post->details}}</td>
@@ -42,9 +44,11 @@
 
        
   
-        <td>{{$post->action}}
-      <a class='btn btn-success' href="">edit</a>
-        <a class='btn btn-success' href="">Delete</a>
+        <td>
+          @if($post->status == 'pending')
+          <a class='btn btn-success' href="{{route('Post.approve',$post->id)}}">Approve</a>
+           <a class='btn btn-success' href="">Delete</a>
+      @endif
         <!-- <a class='btn btn-Danger' href="">View</a> -->
         </td>
       </tr>

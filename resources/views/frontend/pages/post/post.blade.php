@@ -2,6 +2,9 @@
 @section('product')
 <h1>Posts</h1>
 <div class="row" style="margin-top: 75px;">
+@if(session()->has('message'))
+            <p class="alert alert-success">{{session()->get('message')}}</p>
+        @endif
 <!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> --> 
 <!-- <a href="{{route('DonationList.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Donation List</h2></a> -->
 <!-- <a href="{{route('Post.create')}}" class="btn btn-success "  style="float: right;font-size:18px; ">Add New posts </a> -->
@@ -34,7 +37,8 @@
               <!-- <img width="150px" src="{{url('/uploads/',$post->pet_picture)}}" alt="product image"> -->
               <div class="down-content">
                 <a href="#"><h4>{{$post->id}}</h4></a>
-                <h6>{{$post->pet_name}}</h6>
+                <h6>{{$post->pet_categories_name}}</h6>
+                <p>{{$post->picture}}</p>
                 <p>{{$post->title}}</p>
                 <p>{{$post->details}}</p>
                 <p>{{$post->type}}</p>
@@ -48,7 +52,13 @@
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                 </ul>
-                <span>Reviews (24)</span>
+                <!-- <span>Reviews (24)</span> -->
+                @if($post->type == 'adoption' )
+                <a href="{{route('Post.donate',$post->id)}}" class="btn btn-success">Donate</a>
+                @else
+                <a href="{{route('Post.adopt',$post->id)}}" class="btn btn-success">Adopt</a>
+                @endif
+                <a href="{{route('Post.view',$post->id)}}" class="btn btn-success">View</a>
               </div>
             </div>
 </div>

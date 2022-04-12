@@ -6,39 +6,29 @@
                   <div class="col-xl-9 col-lg-7 col-md-5 col-sm-9 col-9">
                      <div class="header-left d-flex align-items-center">
                         <div class="header-logo">
-                           <a href="index.html"><img src="assets/img/p.jpg" alt="Pet Shop BD"></a>
+                           <a  href="index.html"><img style="height: 60px; " src="{{url('image/p.jpg')}}" alt="Pet Shop BD"></a>
                         </div>
                         
 
                         <div class="main-menu d-none d-xl-block">
                            <nav id="mobile-menu">
                               <ul>
-                                 <li class=""><a href="{{route('home')}}">Home</a>
-                                 </li>
-                                 <li class=""><a href="">Pet Products</a>
-                                 </li>
-                                 <li class=""><a href="">Pets</a>
-                                 </li>
-                                 <!-- <li class=""><a href="">Contact us</a>
-                                 </li> -->
-                                 <li class=""><a href="{{url('cart')}}">Add to cart</a>
-                                 </li>
-                                 <!-- <li class=""><a href="">About</a>
-                                 </li> -->
+                                 <li class=""><a href="{{route('home')}}">Home</a></li>
+                                 <li class=""><a href="">Pet Products</a></li>
+                                 <li class=""><a href="">Pets</a></li>
+                                 <!-- <li class=""><a href="{{url('cart')}}">Add to cart</a></li> -->
                                  <li class="menu-item-has-children"><a href="{{route('Post')}}">Posts</a>
                                      <ul class="sub-menu">
                                          <li><a href="{{route('Post.create')}}">Create Post</a></li>
                                          
                                      </ul>
-                                     
                                  </li>
                                 </li>
                                
-                        <li class="nav-item">
-                        <!--  -->
+                        <!-- <li class="nav-item">
                         
                         <a style="color:white" href="{{route('cart.view')}}">Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</a>
-                    </li>
+                    </li> -->
                     
                                  <li class=""><a href="{{route('signup')}}">Signup</a>
                                  </li>
@@ -88,8 +78,10 @@
                               </div>
                            </div>
                         </div> -->
+                        <li class=""><a href="{{route('myprofile')}}">MyProfile</a>
+                                 </li>
                         <div class="d-none d-md-block">
-                           <a class="user-btn-sign-up edu-btn" href="javascript:void(0)">Sign Up</a>
+                           <a class="user-btn-sign-up edu-btn" href="{{route('signup')}}">Sign Up</a>
                         </div>
                         <div class="menu-bar d-xl-none ml-20">
                            <a class="side-toggle" href="javascript:void(0)">

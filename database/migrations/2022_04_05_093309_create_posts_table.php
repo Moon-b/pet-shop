@@ -16,13 +16,14 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pet_id');
+            $table->foreignId('pet_category_id');
             $table->foreignId('user_id');
-            $table->foreignId('recever_id');
+            $table->foreignId('recever_id')->nullable();
+            $table->string('picture')->nullable();
             $table->string('title')->nullable();
             $table->string('details')->nullable();
             $table->string('type')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default('pending');
             $table->date('from_date')->nullable();
             $table->date('to_date')->nullable();
             $table->string('is_temporary')->default('no');

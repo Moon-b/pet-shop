@@ -1,4 +1,9 @@
 @extends('frontend.master')
+
+@section('slider')
+@include('frontend.partials.banner')
+@endsection
+
 @section('product')
    @if(session()->has('message'))
             <p class="alert alert-success">{{session()->get('message')}}</p>
@@ -8,7 +13,7 @@
                 <div class="col-md-4">
                     <div class="product-item">
                         <a href="{{route('product.view',$data->id)}}">
-                             <!-- <img src="{{url('/uploads/'.$data->pet_product_image)}}" alt="Product Image" style="height: 300px;"> --> -->
+                             <!-- <img src="{{url('/uploads/'.$data->pet_product_image)}}" alt="Product Image" style="height: 300px;"> --> 
                             <img width="150px" src="{{url('/uploads/',$data->pet_product_picture)}}" alt="product image">
                         </a>
                         <div class="down-content">

@@ -79,11 +79,16 @@
                     </td>
                     <td data-th="Price">{{$cartData['price']}} BDT</td>
                     <td data-th="Quantity">
-                        <input type="number" class="form-control text-center" value="{{$cartData['quantity']}}">
+                    <form action="{{route('cart.update',$key)}}" method="post">
+                            @csrf
+                        <input name="quantity" type="number" class="form-control text-center" value="{{$cartData['quantity']}}">
+                        <button type="submit" class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                        </form>
                     </td>
                     <td data-th="Subtotal" class="text-center">{{$cartData['subtotal']}} BDT</td>
                     <td class="actions" data-th="">
-                        <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                  
+                        <!-- <button class="btn btn-info btn-sm"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M5.463 4.433A9.961 9.961 0 0 1 12 2c5.523 0 10 4.477 10 10 0 2.136-.67 4.116-1.81 5.74L17 12h3A8 8 0 0 0 6.46 6.228l-.997-1.795zm13.074 15.134A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12c0-2.136.67-4.116 1.81-5.74L7 12H4a8 8 0 0 0 13.54 5.772l.997 1.795z"/></svg></i></button> -->
                         <a href="{{route('cart.delete',$key)}}"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 8h16v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8zm2 2v10h12V10H6zm3 2h2v6H9v-6zm4 0h2v6h-2v-6zM7 5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v2h5v2H2V5h5zm2-1v1h6V4H9z"/></i></svg></a>
                         <!-- <button class="btn btn-danger btn-sm"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 8h16v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8zm2 2v10h12V10H6zm3 2h2v6H9v-6zm4 0h2v6h-2v-6zM7 5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v2h5v2H2V5h5zm2-1v1h6V4H9z"/></i></svg></button> -->
                     </td>
