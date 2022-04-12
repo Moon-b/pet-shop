@@ -19,7 +19,7 @@ class MyProfileController extends Controller
         return view('frontend.pages.myprofile.myprofile',compact('users'));
     }
     public function mypost(){   
-        $posts = Post::where('user_id',auth()->user()->id)->first();
+        $posts = Post::where('user_id',auth()->user()->id)->get();
         return view('frontend.pages.myprofile.mypost',compact('posts'));
     }
 }

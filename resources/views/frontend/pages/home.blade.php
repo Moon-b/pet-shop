@@ -1,8 +1,6 @@
 @extends('frontend.master')
 
-@section('slider')
-@include('frontend.partials.banner')
-@endsection
+
 
 @section('product')
    @if(session()->has('message'))

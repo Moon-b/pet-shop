@@ -119,7 +119,7 @@
                 </td>
                 <td><a href="{{route('cart.clear')}}" class="btn btn-danger"> Clear Cart</a></td>
                     <td colspan="" class="hidden-xs"></td>
-                    <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+                    <td><a href="{{route('checkout')}}" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
                 </tr>
                 </tfoot>
             </table>

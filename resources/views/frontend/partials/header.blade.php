@@ -30,11 +30,12 @@
                         <a style="color:white" href="{{route('cart.view')}}">Cart ({{session()->has('cart') ? count(session()->get('cart')):0}})</a>
                     </li> -->
                     
-                                 <li class=""><a href="{{route('signup')}}">Signup</a>
-                                 </li>
+                                 
                                  @if(auth()->user())
                                  <li class=""><a href="{{route('douserlogout')}}">Logout</a>
                                  @else
+                                 <li class=""><a href="{{route('signup')}}">Signup</a>
+                                 </li>
                                  <li class=""><a href="{{route('userlogin')}}">Signin</a>
                                  </li>
                                  @endif

@@ -7,7 +7,7 @@
 <div class="row">
     <!-- <a href="{{route('mypost')}}" class="btn btn-info">My Post</a> -->
 </div>
-<div class="col-12">
+<div class="col-12" style="overflow-x: scroll;">
   <table class="table">
   <thead>
     <tr>
@@ -21,22 +21,30 @@
       <th scope="col">to_date</th>
       <th scope="col">is_temporary</th>
       
+      <th scope="col">Action</th>
+
+      
  
     </tr>
   </thead>
   <tbody>
+    @foreach($posts as $post)
       <tr>
-        <td>{{$posts->id}}</td>
-         <td>{{$posts->pet->pet_categories_name}}</td>
-        <td><img width="150px" src="{{url('/uploads',$posts->picture)}}" alt=""></td>
-        <td>{{$posts->title}}</td>
-        <td>{{$posts->details}}</td>
-        <td>{{$posts->type}}</td>
-        <td>{{$posts->from_date}}</td>
-        <td>{{$posts->to_date}}</td>
-        <td>{{$posts->is_temporary}}</td>
+        <td>{{$post->id}}</td>
+         <td>{{$post->pet->pet_categories_name}}</td>
+        <td><img width="150px" src="{{url('/uploads',$post->picture)}}" alt=""></td>
+        <td>{{$post->title}}</td>
+        <td>{{$post->details}}</td>
+        <td>{{$post->type}}</td>
+        <td>{{$post->from_date}}</td>
+        <td>{{$post->to_date}}</td>
+        <td>{{$post->is_temporary}}</td>
+        @if($post->recever_id != null)
+        <td><a href="" class="btn btn-info">View</a></td>
+        @endif
         
       </tr>
+      @endforeach
   </tbody>
 </table>
   </div>

@@ -9,8 +9,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdoptionListController;
 use App\Http\Controllers\DonationListController;
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\OrderDetailsController;
+use App\Http\Controllers\OrderViewController;
+use App\Http\Controllers\OrderDetailsViewController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\PostController;
 use App\Http\Controllers\PostReciveController;
@@ -18,6 +18,7 @@ use App\Http\Controllers\frontend\SignupController;
 use App\Http\Controllers\frontend\UserLoginController;
 use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\frontend\MyProfileController;
+use App\Http\Controllers\frontend\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -129,8 +130,8 @@ Route::get('/userview',[UserController::class,'userview'])->name('user.view');
 
 
 
-Route::get('/order',[OrderController::class,'order'])->name('Order');
-Route::get('/orderdetails',[OrderDetailsController::class,'orderdetails'])->name('OrderDetails');
+Route::get('/order',[OrderViewController::class,'order'])->name('Order');
+Route::get('/orderdetails',[OrderDetailsViewController::class,'orderdetails'])->name('OrderDetails');
 
 Route::get('/post/receive',[PostReciveController::class,'postreceive'])->name('Postreceive');
 Route::get('/post/approve/{post_id}',[PostReciveController::class,'postapprove'])->name('Post.approve');
@@ -166,8 +167,13 @@ Route::get('/cart/delete/{id}',[CartController::class,'deleteCart'])->name('cart
 Route::post('/cart/update/{id}',[CartController::class,'updateCart'])->name('cart.update');
 
 // Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
-// Route::post('/order/place',[OrderController::class,'orderPlace'])->name('order.place');
 
 
 Route::get('/myprofile',[MyProfileController::class,'myprofile'])->name('myprofile');
 Route::get('/mypost',[MyProfileController::class,'mypost'])->name('mypost');
+
+
+
+
+Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
+Route::post('/order/place',[OrderController::class,'orderPlace'])->name('order.place');

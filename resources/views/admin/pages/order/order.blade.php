@@ -10,29 +10,33 @@
   <table class="table">
   <thead>
     <tr>
+    
+           
       <th scope="col">id</th>
-      <th scope="col">ordered item name</th>
+      <th scope="col"> 'receiver_first_name'</th>
       
-      <th scope="col">total product price</th>
-      <th scope="col">order date</th>
+      <th scope="col">'receiver_last_name'</th>
+      <th scope="col"> 'receiver_email'</th>
+      <th scope="col"> 'total'</th>
       <th scope="col">action</th>
  
     </tr>
   </thead>
   <tbody>
-    @foreach($orders as $singleorder)
+    @foreach($order as $singleorder)
       <tr>
         <td>{{$singleorder->id}}</td>
-         <td>{{$singleorder->ordered_item_name}}</td>
-        
-        <td>{{$singleorder->total_product_price}}</td>
+         <td>{{$singleorder->receiver_first_name}}</td>
+         <td>{{$singleorder->receiver_last_name}}</td>
+         <td>{{$singleorder->receiver_email}}</td>
+        <td>{{$singleorder->total}}</td>
 
         @php
           $date = date('Y-m-d', strtotime($singleorder->created_at));
         @endphp
         <td>{{$date}}</td>
           <td>{{$singleorder->action}}
-        <a  class='btn btn-primary' href="">Edit</a>  
+          
         
         
         <a class='btn btn-success' href="">Delete</a>
