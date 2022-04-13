@@ -31,7 +31,8 @@ class UserLoginController extends Controller
     }
 public function douserlogout()
     {
+        session()->forget('cart');
         auth()->logout();
-        return redirect()->route('userlogin')->with('message','Logout Successful');
+        return redirect()->route('home')->with('message','Logout Successful');
     }
 }

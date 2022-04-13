@@ -4,9 +4,9 @@
             <p class="alert alert-success">{{session()->get('message')}}</p>
         @endif
  
-<div class="row">
+<!-- <div class="row">
     <a href="{{route('mypost')}}" class="btn btn-info">My Post</a>
-</div>
+</div> -->
 <div class="col-12">
   <table class="table">
   <thead>
@@ -32,7 +32,9 @@
         <td>{{$users->user_city}}</td>
         <td>{{$users->user_phone}}</td>
           
-        
+        <td> <a href="{{route('mypost')}}"   class="btn btn-info">My Post </a>
+        <td> <a href=""   class="btn btn-info">My Order Details </a>
+        <td> <a href=""   class="btn btn-info">Edit </a>
       </tr>
   </tbody>
 </table>

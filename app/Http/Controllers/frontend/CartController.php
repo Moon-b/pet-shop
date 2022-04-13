@@ -27,6 +27,7 @@ class CartController extends Controller
             {
                 $newCart=[
                     $product->id=>[
+                            'product_id'=>$product->id,
                             'name'=>$product->pet_product_name,
                             'price'=>$product->pet_product_price,
                             'quantity'=>1,

@@ -21,6 +21,8 @@ class CreateOrdersTable extends Migration
             $table->string('receiver_email');
             $table->string('receiver_address');
             $table->double('total',10,2);
+            $table->string('status')->default('pending');
+            $table->string('contact');
             $table->string('payment_method')->default('COD');
             $table->timestamps();
         });

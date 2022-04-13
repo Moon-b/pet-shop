@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\OrderDetails;
 
-class OrderDetailsController extends Controller
+class OrderDetailsViewController extends Controller
 {
     public function orderdetails(){
         $orderdetails=OrderDetails::all();

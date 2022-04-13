@@ -81,9 +81,9 @@
                         </div> -->
                         <li class=""><a href="{{route('myprofile')}}">MyProfile</a>
                                  </li>
-                        <div class="d-none d-md-block">
+                        <!-- <div class="d-none d-md-block">
                            <a class="user-btn-sign-up edu-btn" href="{{route('signup')}}">Sign Up</a>
-                        </div>
+                        </div> -->
                         <div class="menu-bar d-xl-none ml-20">
                            <a class="side-toggle" href="javascript:void(0)">
                               <div class="bar-icon">
