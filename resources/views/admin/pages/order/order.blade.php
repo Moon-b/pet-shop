@@ -34,15 +34,21 @@
          <td>{{$singleorder->total}}</td>
           
         <td>
-        <span class="btn btn-success">{{$singleorder->status}}</span>
+          
+        <!-- <span class="btn btn-success">{{$singleorder->status}}</span> -->
+        @if($singleorder->status == 'pending')
+          <a class='btn btn-success' href="{{route('Order.approve',$singleorder->id)}}">Approve</a>
+           <a class='btn btn-success' href="">Delete</a>
+      @endif
 </td>
+
 <td>{{$singleorder->contact}}</td>
           <td>{{$singleorder->action}} 
           
         
         
         <a class='btn btn-success' href="">Delete</a>
-        <a class='btn btn-danger' href="">View</a>
+        <a class='btn btn-danger' href="{{route('order.view',$singleorder->id)}}">View</a>
         </td>
       </tr>
     @endforeach

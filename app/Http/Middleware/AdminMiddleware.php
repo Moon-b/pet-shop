@@ -23,6 +23,7 @@ class AdminMiddleware
             {
                 return $next($request);
             }else
+            dd($request);
             {
                 return redirect()->route('home');
             }

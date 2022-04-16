@@ -28,6 +28,7 @@ class OrderController extends Controller
            'receiver_email' =>$request->email,
            'receiver_address' =>$request->address,
            'total' =>array_sum(array_column(session()->get('cart'),'subtotal')),
+           'contact'=>$request->contact,
         ]);
         foreach ($cart as $key => $value) {
                 OrderDetails::create([

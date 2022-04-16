@@ -133,7 +133,12 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
 
 
         Route::get('/order',[OrderViewController::class,'order'])->name('Order');
+        Route::get('/order/view/{id}',[OrderViewController::class,'view'])->name('order.view');
         Route::get('/orderdetails',[OrderDetailsViewController::class,'orderdetails'])->name('OrderDetails');
+        Route::get('/orderapprove/{order_id}',[OrderViewController::class,'orderapprove'])->name('Order.approve');
+
+
+
 
         Route::get('/post/receive',[PostReciveController::class,'postreceive'])->name('Postreceive');
         Route::get('/post/approve/{post_id}',[PostReciveController::class,'postapprove'])->name('Post.approve');

@@ -108,7 +108,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="address">Contact</label>
-                    <input name="address" type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                    <input name="contact" type="number" class="form-control" id="address" placeholder="1234 Main St" required="">
                     <div class="invalid-feedback">
                         Please enter your shipping contact.
                     </div>

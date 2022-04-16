@@ -11,29 +11,31 @@
     
            
       <th scope="col">id</th>
-      <th scope="col"> 'order_id'</th>
+      <th scope="col"> order id</th>
       
-      <th scope="col">'pet_product_id'</th>
-      <th scope="col"> 'quantity'</th>
-      <th scope="col"> 'unit_price'</th>
-      <th scope="col"> 'subtotal'</th>
+      <th scope="col">pet product id</th>
+      <th scope="col"> quantity</th>
+      <th scope="col"> unit price</th>
+      <th scope="col"> subtotal</th>
       <th scope="col">action</th>
  
     </tr>
   </thead>
   <tbody>
     @foreach( $orderdetails as $singleorderdetail)
+   
       <tr>
         <td>{{$singleorderdetail->id}}</td>
-         <td>{{$singleorderdetail->receiver_first_name}}</td>
-         <td>{{$singleorderdetail->receiver_last_name}}</td>
-         <td>{{$singleorderdetail->receiver_email}}</td>
-        <td>{{$singleorderdetail->total}}</td>
+         <td>{{$singleorderdetail->order_id}}</td>
+         <td>{{$singleorderdetail->pet_product_id}}</td>
+         <td>{{$singleorderdetail->quantity}}</td>
+        <td>{{$singleorderdetail->unit_price}}</td>
+        <td>{{$singleorderdetail->subtotal}}</td>
 
-        @php
+        <!-- @php
           $date = date('Y-m-d', strtotime($singleorderdetail->created_at));
-        @endphp
-        <td>{{$date}}</td>
+        @endphp -->
+        <!-- <td>{{$date}}</td> -->
           <td>{{$singleorderdetail->action}}
           
         

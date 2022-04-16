@@ -20,6 +20,7 @@ class CreateOrderDetailsTable extends Migration
             $table->integer('quantity');
             $table->double('unit_price',10,2);
             $table->double('subtotal',10,2);
+            
         
 
             $table->timestamps();
