@@ -40,7 +40,7 @@
         <td>{{$post->to_date}}</td>
         <td>{{$post->is_temporary}}</td>
         @if($post->recever_id != null)
-        <td><a href="" class="btn btn-info">View</a></td>
+        <td><a href="{{route('receiverinfo',$post->id)}}" class="btn btn-info">View</a></td>
         @endif
         
       </tr>

@@ -33,6 +33,7 @@
         <td>{{$users->user_phone}}</td>
           
         <td> <a href="{{route('mypost')}}"   class="btn btn-info">My Post </a>
+        <td> <a href="{{route('myorder')}}"   class="btn btn-info">My Order </a>
         <td> <a href=""   class="btn btn-info">My Order Details </a>
         <td> <a href=""   class="btn btn-info">Edit </a>
       </tr>

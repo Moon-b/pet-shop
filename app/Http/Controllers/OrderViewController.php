@@ -15,8 +15,8 @@ class OrderViewController extends Controller
     }  
     public function view($id)
     {
-        $order=Order::with('details','details.product')->find($id);
-//dd($order);
+        $order=Order::with('details')->find($id);
+// dd($order);
         return view('admin.pages.order.invoice',compact('order'));
     }
     public function orderapprove($id){

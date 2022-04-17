@@ -2,9 +2,7 @@
 @section('content')
 <h1>Posts</h1>
 <div class="row" style="margin-top: 75px;">
-<!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> --> 
-<!-- <a href="{{route('DonationList.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Donation List</h2></a> -->
-<!-- <a href="{{route('Postreceive')}}" class="btn btn-success "  style="float: right;font-size:18px; ">Add New posts </a> -->
+
   <div class="col-12">
   <table class="table">
   <thead>
@@ -49,7 +47,10 @@
           <a class='btn btn-success' href="{{route('Post.approve',$post->id)}}">Approve</a>
            <a class='btn btn-success' href="">Delete</a>
       @endif
-        <!-- <a class='btn btn-Danger' href="">View</a> -->
+        
+        @if($post->recever_id != null)
+        <td><a href="{{route('admin.receiver',$post->id)}}" class="btn btn-info">View</a></td>
+        @endif
         </td>
       </tr>
     @endforeach

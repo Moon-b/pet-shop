@@ -19,6 +19,7 @@ use App\Http\Controllers\frontend\UserLoginController;
 use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\frontend\MyProfileController;
 use App\Http\Controllers\frontend\OrderController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,14 +35,14 @@ use App\Http\Controllers\frontend\OrderController;
 
 Route::get('/admin/login',[UserController::class,'login'])->name('admin.login');
 Route::post('/admin/dologin',[UserController::class,'dologin'])->name('admin.dologin');
-Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
+Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function (){
     // Route::get('/', function () {
     //     return view('welcome');
     // });
 
-        Route::get('/dashboard', function () {
-            return view('admin.pages.dashboard.dashboard');
-        })->name('dashboard');
+        // Route::get('/dashboard', function () {
+        //     return view('admin.pages.dashboard.dashboard');
+        // })->name('dashboard');
 
 
         // Route::get('/petproductcategory', function () {
@@ -59,6 +60,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
         // Route::get('/customer', function () {
         //     return view('admin.pages.customer.customer');
         // });
+        Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
         Route::get('/order', function () {
             return view('admin.pages.order.order');
         });
@@ -142,19 +144,13 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
 
         Route::get('/post/receive',[PostReciveController::class,'postreceive'])->name('Postreceive');
         Route::get('/post/approve/{post_id}',[PostReciveController::class,'postapprove'])->name('Post.approve');
-
+        Route::get('/post/receiver/{id}',[PostReciveController::class,'receiver'])->name('admin.receiver');
         // Route::get('/postreceives',[PostReceiveController::class,'postreceives'])->name('Postreceives');
         
     });
 
 
 
-Route::get('/post',[PostController::class,'post'])->name('Post');
-Route::get('/postcreate',[PostController::class,'postcreate'])->name('Post.create');
-Route::post('/postform',[PostController::class,'postform'])->name('Post.form');
-Route::get('/post/view/{id}',[PostController::class,'postview'])->name('Post.view');
-Route::get('/post/adopt/{id}',[PostController::class,'postadopt'])->name('Post.adopt');
-Route::get('/post/donate/{id}',[PostController::class,'postdonate'])->name('Post.donate');
 
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/cart', function () {
@@ -181,6 +177,9 @@ Route::post('/cart/update/{id}',[CartController::class,'updateCart'])->name('car
 
 Route::get('/myprofile',[MyProfileController::class,'myprofile'])->name('myprofile');
 Route::get('/mypost',[MyProfileController::class,'mypost'])->name('mypost');
+Route::get('/receiverinfo/{id}',[MyProfileController::class,'receiverinfo'])->name('receiverinfo');
+Route::get('/myorder',[MyProfileController::class,'myorder'])->name('myorder');
+Route::get('/myorderdetails',[MyProfileController::class,'myorderdetails'])->name('myorderdetails');
 
 
 
@@ -189,4 +188,15 @@ Route::group(['middleware'=>'auth'],function (){
 Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
 Route::post('/order/place',[OrderController::class,'orderPlace'])->name('order.place');
 Route::get('/douserlogout',[UserLoginController::class,'douserlogout'])->name('douserlogout');
+Route::get('/postcreate',[PostController::class,'postcreate'])->name('Post.create');
+Route::post('/postform',[PostController::class,'postform'])->name('Post.form');
+Route::get('/post/adopt/{id}',[PostController::class,'postadopt'])->name('Post.adopt');
+Route::get('/post/donate/{id}',[PostController::class,'postdonate'])->name('Post.donate');
+
+Route::get('/post',[PostController::class,'post'])->name('Post');
+
+Route::get('/post/view/{id}',[PostController::class,'postview'])->name('Post.view');
+Route::get('/post/adopt/{id}',[PostController::class,'postadopt'])->name('Post.adopt');
+Route::get('/post/donate/{id}',[PostController::class,'postdonate'])->name('Post.donate');
+
 });

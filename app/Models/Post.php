@@ -14,4 +14,8 @@ class Post extends Model
     {
         return $this->belongsTo(PetCategory::class,'pet_category_id','id');
     }
+    public function post()
+    {
+        return $this->belongsTo(User::class,'user_id','id');
+    }
 }

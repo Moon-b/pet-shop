@@ -19,11 +19,12 @@ class AdminMiddleware
         
         if(auth()->check())
         {
-            if(auth()->user()->role=='admin')
+            // dd(auth()->user());
+            if(auth()->user()->roll=='admin')
             {
                 return $next($request);
             }else
-            dd($request);
+            // dd($request);
             {
                 return redirect()->route('home');
             }

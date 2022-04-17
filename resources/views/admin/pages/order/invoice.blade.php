@@ -41,23 +41,21 @@
                         <tr>
                             <th class="center">#</th>
                             <!-- <th>Item</th> -->
-                            <th class="right"> Name</th>
-                            <th class="center">Unit Price</th>
-                            <th class="center">Quantity</th>
-                            <th class="center">SubTotal</th>
-                            <th class="right">Total</th>
+                            <th class="left"> Name</th>
+                            <th class="left">Unit Price</th>
+                            <th class="left">Quantity</th>
+                            <th class="left">SubTotal</th>
                         </tr>
                         </thead>
                         <tbody>
 
                         @foreach($order->details as $data)
-                        <!-- dd($order->all()); -->
                         <tr>
                             <td class="center">{{$data->id}}</td>
-                            <td class="left strong">{{$data->product->name}}</td>
-                            <td class="right">{{$data->unit_price}} .BDT</td>
-                            <td class="center">{{$data->quantity}}</td>
-                            <td class="right">{{$data->subtotal}} .BDT</td>
+                            <td class="left strong">{{$data->product->pet_product_name}}</td>
+                            <td class="left">{{$data->unit_price}} .BDT</td>
+                            <td class="left">{{$data->quantity}}</td>
+                            <td class="left">{{$data->subtotal}} .BDT</td>
                         </tr>
                         @endforeach
            

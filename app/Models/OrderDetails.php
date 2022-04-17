@@ -11,6 +11,6 @@ class OrderDetails extends Model
     protected $guarded=[];
     public function product()
     {
-        return $this->belongsTo(PetProduct::class,'id','pet_product_id');
+        return $this->belongsTo(PetProduct::class, 'item_id','id');
     }
 }

@@ -38,7 +38,7 @@
               <div class="down-content">
                 <a href="#"><h4>{{$post->id}}</h4></a>
                 <h6>{{$post->pet_categories_name}}</h6>
-                <p><img src="{{url('/uploads/',$post->picture)}}" alt=""> </p>
+                <p><img src="{{url('/uploads/',$post->picture)}}" alt="" style="height: 190px"> </p>
                 <p>{{$post->title}}</p>
                 <p>{{$post->details}}</p>
                 <p>{{$post->type}}</p>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 use App\Models\PetCategory;
 
 
@@ -23,6 +24,14 @@ class PostReciveController extends Controller
             'status'=>'approved'
         ]);
         return redirect()->back();
+    }
+    public function receiver($id){
+//   dd($id);
+
+        $post=Post::find($id);
+        $user=User::find($post->reciver_id);
+        return view('admin.pages.post.receiver',compact('user','post'));
+
     }
 }
 
