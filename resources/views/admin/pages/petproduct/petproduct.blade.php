@@ -11,6 +11,7 @@
       <th scope="col">pet_product_picture</th>
       <th scope="col">pet_product_details</th>
       <th scope="col">pet_product_price</th>
+      <th scope="col">available_quantity</th>
       <th scope="col">pet_product_status</th>
       <th scope="col">edit</th>
       <th scope="col">delete</th>
@@ -30,6 +31,7 @@
         <!-- <td>{{$singlepetproduct->pet_product_picture}}</td> -->
         <td>{{$singlepetproduct->pet_product_details}}</td>
         <td>{{$singlepetproduct->pet_product_price}}</td>
+        <td>{{$singlepetproduct->available_quantity}}</td>
         <td>{{$singlepetproduct->pet_product_status}}</td>
         
         <td>

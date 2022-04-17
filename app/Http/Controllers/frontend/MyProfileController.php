@@ -29,6 +29,7 @@ class MyProfileController extends Controller
         return view('frontend.pages.myprofile.myorder',compact('order'));
     }
     public function receiverinfo($id){
+        // dd($id);
         $post=Post::find($id);
         $user=User::find($post->reciver_id);
         return view('frontend.pages.myprofile.receiverinfo',compact('user','post'));

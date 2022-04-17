@@ -79,6 +79,14 @@
                               </div>
                            </div>
                         </div> -->
+                        <div class="aa-search-box">
+              
+                
+                <form action="{{route('search')}}" method="GET">
+                <button type="submit"><span class="fa fa-search"></span></button>
+                  <input type="text" name="search" placeholder="Search here ex. 'man' ">
+                </form>
+              </div>
                         <li class=""><a href="{{route('myprofile')}}">MyProfile</a>
                                  </li>
                         <!-- <div class="d-none d-md-block">

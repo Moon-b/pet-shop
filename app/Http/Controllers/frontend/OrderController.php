@@ -5,6 +5,8 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\OrderDetails;
+use App\Models\PetProduct;
+
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -30,21 +32,36 @@ class OrderController extends Controller
            'total' =>array_sum(array_column(session()->get('cart'),'subtotal')),
            'contact'=>$request->contact,
         ]);
-        foreach ($cart as $key => $value) {
+        // step 2 insert product into order details
+        foreach(session()->get('cart') as $product_id=>$cartData){
+        // foreach ($cart as $key => $value) {
                 OrderDetails::create([
                 'order_id'=>$order->id,
-                'item_id'=> $key,
-                'quantity'=>$value['quantity'],
-                'unit_price'=>(float)$value['price'],
-                'subtotal'=>(float)$value['subtotal']
+                'item_id'=> $product_id,
+                'quantity'=>$cartData['quantity'],
+                'unit_price'=>(float)$cartData['price'],
+                'subtotal'=>(float)$cartData['subtotal']
             ]);
+              //stock update here
+              $product=PetProduct::find($product_id);
+              $product->decrement('available_quantity',$cartData['quantity']);
+  
+  
+        
         }
         session()->forget('cart');
-        return redirect()->route('home');
+        return redirect()->route('home')->with('message','Order Placed Successfully');
     }
+        // session()->forget('cart');
+        // return redirect()->route('home');
+       
+
+
+
     // public function myorder(){   
     //     $order = Post::where('user_id',auth()->user()->id)->get();
     //     return view('frontend.pages.myprofile.mypost',compact('posts'));
     // }
 
+   
 }

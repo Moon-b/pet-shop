@@ -20,6 +20,7 @@ use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\frontend\MyProfileController;
 use App\Http\Controllers\frontend\OrderController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\frontend\SerachController;
 
 /*
 |--------------------------------------------------------------------------
@@ -180,7 +181,7 @@ Route::get('/mypost',[MyProfileController::class,'mypost'])->name('mypost');
 Route::get('/receiverinfo/{id}',[MyProfileController::class,'receiverinfo'])->name('receiverinfo');
 Route::get('/myorder',[MyProfileController::class,'myorder'])->name('myorder');
 Route::get('/myorderdetails',[MyProfileController::class,'myorderdetails'])->name('myorderdetails');
-
+Route::get('/search/product/by/name',[ SerachController::class,'search'])->name('search');
 
 
 Route::group(['middleware'=>'auth'],function (){
@@ -192,6 +193,8 @@ Route::get('/postcreate',[PostController::class,'postcreate'])->name('Post.creat
 Route::post('/postform',[PostController::class,'postform'])->name('Post.form');
 Route::get('/post/adopt/{id}',[PostController::class,'postadopt'])->name('Post.adopt');
 Route::get('/post/donate/{id}',[PostController::class,'postdonate'])->name('Post.donate');
+
+
 
 Route::get('/post',[PostController::class,'post'])->name('Post');
 

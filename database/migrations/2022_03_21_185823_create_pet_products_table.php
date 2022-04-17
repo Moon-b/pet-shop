@@ -20,6 +20,7 @@ class CreatePetProductsTable extends Migration
             $table->string('pet_product_details');
             $table->string('pet_product_picture');
             $table->string('pet_product_price');
+            $table->integer('available_quantity');
             $table->string('pet_product_status');
 
             $table->timestamps();

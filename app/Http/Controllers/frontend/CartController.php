@@ -25,6 +25,8 @@ class CartController extends Controller
             //check if cart is empty step 1
             if($getCart==null)
             {
+                if($product->available_quantity>=1)
+                {
                 $newCart=[
                     $product->id=>[
                             'product_id'=>$product->id,
@@ -38,10 +40,13 @@ class CartController extends Controller
                 ];
 
                 session()->put('cart',$newCart);
-
+        
                 return redirect()->back()->with('message','Product Added to Cart');
 
             }
+            return redirect()->back()->with('message','Product stock out.');
+
+        }
 
 
             //if not empty but product exist step 2
@@ -50,11 +55,17 @@ class CartController extends Controller
             {
                 //increment quantity of existing product.
                 ++$getCart[$product_id]['quantity'];
+                if($product->quantity>=$getCart[$product_id]['quantity'])
+                {
                 $getCart[$product_id]['subtotal'] = (float)$getCart[$product_id]['price'] * (int)$getCart[$product_id]['quantity'];
 
                 session()->put('cart',$getCart);
-                return redirect()->back()->with('message','Product Quantity Updated');
-            }else
+                return redirect()->back()->with('message','Product Quantity Updated.');
+            }
+            return redirect()->back()->with('message','Product Stock out.');
+        }else
+        {    if($product->quantity>=1)
+                {
             {
                 //if not empty but product is different step 3
                 $getCart[$product->id]=[
@@ -70,6 +81,8 @@ class CartController extends Controller
             }
 
         }
+    }
+    }
         public function clearCart()
     {
         session()->forget('cart');

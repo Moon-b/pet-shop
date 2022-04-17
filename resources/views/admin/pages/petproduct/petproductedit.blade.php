@@ -35,6 +35,11 @@
     <input required value="{{$petproducts->pet_product_price}}"name ='pet_product_price' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_product_price">
    
   </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Available Quantity</label>
+    <input required value="{{$petproducts->available_quantity}}"name ='available_quantity' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter available quantity">
+   
+  </div>
  
     <div class="form-group">
     <label for="exampleInputEmail1">Pet Product Status</label>

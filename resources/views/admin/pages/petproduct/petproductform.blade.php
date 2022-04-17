@@ -43,6 +43,11 @@
     <input required name ='pet_product_price' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter pet_product_price">
    
   </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Available Quantity</label>
+    <input required name ='available_quantity' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter available_quantity">
+   
+  </div>
  
     <div class="form-group">
     <label for="exampleInputEmail1">Pet Product Status</label>
