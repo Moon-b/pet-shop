@@ -18,16 +18,16 @@
       <th scope="col">to date</th>
      
       <th scope="col">is temporary</th>
-      <th scope="col">Post Status</th>
+      <th scope="col"> Status</th>
 
-      <th scope="col">action</th>
+     
       
       
  
     </tr>
   </thead>
   <tbody>
-    @foreach($posts as $post)
+    @foreach($post_report as $post)
       <tr>
       <th scope="row">{{$post->id}}</th>
       
@@ -45,17 +45,8 @@
 
        
   
-        <td>
-          @if($post->status == 'pending')
-          <a class='btn btn-success' href="{{route('Post.approve',$post->id)}}">Approve</a>
-           <a class='btn btn-success' href="{{route('Post.cancel',$post->id)}}">Cancel</a>
-      @endif
         
-        @if($post->recever_id != null)
-        <td><a href="{{route('admin.receiver',$post->id)}}" class="btn btn-info">View</a></td>
-        @endif
-        </td>
-      </tr>
+         
     @endforeach
   </tbody>
 </table>

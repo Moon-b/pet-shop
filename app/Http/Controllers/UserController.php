@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -101,4 +104,31 @@ public function logout()
         }
     
     }
+    public function report(){
+    
+        
+         return view('admin.pages.postreport.report');
+    } 
+    
+    public function reportResult(Request $request){
+        // dd($request->all());
+        $toDate = Carbon::parse($request->to_date)->addDay();
+        $post_report = Post::whereBetween('created_at',[$request->from_date,$toDate])->get();
+        // dd($post_report);
+        return view('admin.pages.postreport.postreport',compact('post_report'));
+
+    }
+    public function orderreport(){
+    
+        
+        return view('admin.pages.orderreport.report');
+   } 
+   public function orderreportResult(Request $request){
+    // dd($request->all());
+    $toDate = Carbon::parse($request->to_date)->addDay();
+    $order_report = Order ::whereBetween('created_at',[$request->from_date,$toDate])->get();
+    // dd($post_report);
+    return view('admin.pages.orderreport.orderreport',compact('order_report'));
+
+}
 }

@@ -7,7 +7,7 @@
         <div class="col-md-3">
             <div class="card" >
                 <h5 class="card-header" style="background-color: green">Total Order</h5>
-                <div class="card-body" style="background-color: greenyellow">
+                <div class="card-body" style="background-color: #33FF7D ">
 
                     <h2>{{$total_order}}</h2>
 

@@ -20,8 +20,10 @@
       <th scope="col">from_date</th>
       <th scope="col">to_date</th>
       <th scope="col">is_temporary</th>
+      <th scope="col"> status</th>
+      <th scope="col">action</th>
       
-      <th scope="col">Action</th>
+      <!-- <th scope="col">Action</th> -->
 
       
  
@@ -38,11 +40,22 @@
         <td>{{$post->type}}</td>
         <td>{{$post->from_date}}</td>
         <td>{{$post->to_date}}</td>
-        <td>{{$post->is_temporary}}</td>
+        <td>{{$post->is_temporary}}</td></br>
+        <td>{{$post->status}}</td></br>
+
         @if($post->recever_id != null)
         <td><a href="{{route('receiverinfo',$post->id)}}" class="btn btn-info">View</a></td>
         @endif
+        {{-- @if($post->status != "cancel")
         
+      
+      <td> <a href="{{route('mypost.cancel',$post->id)}}"   class="btn btn-info">Delete</a></td>
+      @endif --}}
+      @if($post->status == "pending")
+        
+      
+      <td> <a href="{{route('mypost.cancel',$post->id)}}"   class="btn btn-info">Delete</a></td>
+      @endif
       </tr>
       @endforeach
   </tbody>

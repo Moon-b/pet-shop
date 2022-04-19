@@ -29,9 +29,15 @@ class PostReciveController extends Controller
 //   dd($id);
 
         $post=Post::find($id);
-        $user=User::find($post->reciver_id);
+        $user=User::find($post->recever_id);
         return view('admin.pages.post.receiver',compact('user','post'));
 
+    }
+    public function postcancel($id){
+        $post = Post::find($id)->update([
+            'status'=>'cancel'
+        ]);
+        return redirect()->back();
     }
 }
 

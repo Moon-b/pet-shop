@@ -27,6 +27,7 @@ class CreatePostsTable extends Migration
             $table->date('from_date')->nullable();
             $table->date('to_date')->nullable();
             $table->string('is_temporary')->default('no');
+            // $table->string('post_status')->default('pending');
             $table->timestamps();
         });
     }

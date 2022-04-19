@@ -68,10 +68,22 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('Order')}}" class="nav-link nav-toggle"><i class="fa-brands fa-first-order"></i>
+                                <a  class="nav-link nav-toggle"><i class="fa-brands fa-first-order"></i>
                                     <span class="title">Order</span>
                                 </a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{route('Order')}}">Order</a></li>
+                                    <li><a href="{{route('admin.orderreport')}}">Order Report</a></li>
+                                    
+                                </ul>
                             </li>
+                            {{-- <li class="menu-item-has-children"><a href="{{route('Order')}}">Order</a><i class="fa-brands fa-first-order"></i> --}}
+                                {{-- <ul class="sub-menu">
+                                    <li><a href="">Order Report</a></li>
+                                    
+                                </ul>
+                            </li>
+                           </li> --}}
                             <!-- <li class="nav-item">
                                 <a href="{{url('/orderdetails')}}" class="nav-link nav-toggle"> <i data-feather="calendar"></i>
                                     <span class="title">Order Details</span>
@@ -81,6 +93,12 @@
                             <li class="nav-item">
                                 <a href="{{url('/payment')}}" class="nav-link nav-toggle"> <i ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 2l7.298 2.28a1 1 0 0 1 .702.955V7h2a1 1 0 0 1 1 1v2H9V8a1 1 0 0 1 1-1h7V5.97l-6-1.876L5 5.97v7.404a4 4 0 0 0 1.558 3.169l.189.136L11 19.58 14.782 17H10a1 1 0 0 1-1-1v-4h13v4a1 1 0 0 1-1 1l-3.22.001c-.387.51-.857.96-1.4 1.33L11 22l-5.38-3.668A6 6 0 0 1 3 13.374V5.235a1 1 0 0 1 .702-.954L11 2z"/></svg></i>
                                     <span class="title">Payment</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{route('admin.report')}}" class="nav-link nav-toggle"> <i ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 2l7.298 2.28a1 1 0 0 1 .702.955V7h2a1 1 0 0 1 1 1v2H9V8a1 1 0 0 1 1-1h7V5.97l-6-1.876L5 5.97v7.404a4 4 0 0 0 1.558 3.169l.189.136L11 19.58 14.782 17H10a1 1 0 0 1-1-1v-4h13v4a1 1 0 0 1-1 1l-3.22.001c-.387.51-.857.96-1.4 1.33L11 22l-5.38-3.668A6 6 0 0 1 3 13.374V5.235a1 1 0 0 1 .702-.954L11 2z"/></svg></i>
+                                    <span class="title">Report</span>
                                 </a>
                             </li>
                             <!-- <li class="nav-item">

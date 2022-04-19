@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\OrderDetails;
+use App\Models\PetProduct;
+
 
 class OrderViewController extends Controller
 {
@@ -24,6 +27,31 @@ class OrderViewController extends Controller
             'status'=>'approved'
         ]);
         return redirect()->back();
+    }
+    // public function ordercancel($id){
+    //     $order = Order::find($id)->update([
+    //         'status'=>'cancel'
+    //     ]);
+    //     return redirect()->back();
+    // }
+    public function statusOrder($id){
+        $order = Order::find($id);
+        if ($order) {
+            $order_details = OrderDetails::where('order_id',$order->id)->get();
+            foreach ($order_details as $key => $value) {
+                $PetProduct=PetProduct::find($value->item_id);
+                if ($PetProduct) {
+                    $PetProduct->update([
+                        'available_quantity'=> $PetProduct->available_quantity + $value->quantity
+                    ]);
+                }
+            }
+            $order ->update([
+                'status'=>'cancel'
+            ]);
+            return redirect()->back();
+        }
+        
     }
 }
 

@@ -15,8 +15,9 @@
                               <ul>
                                  <li class=""><a href="{{route('home')}}">Home</a></li>
                                  <li class=""><a href="">Pet Products</a></li>
-                                 <li class=""><a href="">Pets</a></li>
+                                 {{-- <li class=""><a href="">Pets</a></li> --}}
                                  <!-- <li class=""><a href="{{url('cart')}}">Add to cart</a></li> -->
+                                 @if(auth()->user())
                                  <li class="menu-item-has-children"><a href="{{route('Post')}}">Posts</a>
                                      <ul class="sub-menu">
                                          <li><a href="{{route('Post.create')}}">Create Post</a></li>
@@ -24,6 +25,7 @@
                                      </ul>
                                  </li>
                                 </li>
+                                @endif
                                
                         <!-- <li class="nav-item">
                         
@@ -33,6 +35,7 @@
                                  
                                  @if(auth()->user())
                                  <li class=""><a href="{{route('douserlogout')}}">Logout</a>
+                                 <li class=""><a href="#">{{auth()->user()->name}}</a>
                                  @else
                                  <li class=""><a href="{{route('signup')}}">Signup</a>
                                  </li>
@@ -84,10 +87,15 @@
                 
                 <form action="{{route('search')}}" method="GET">
                 <button type="submit"><span class="fa fa-search"></span></button>
-                  <input type="text" name="search" placeholder="Search here ex. 'man' ">
+                  <input type="text" name="search" placeholder="Search here  product ">
                 </form>
               </div>
-                        <li class=""><a href="{{route('myprofile')}}">MyProfile</a>
+              @if (auth()->user())
+                  
+                        
+                        <li class=""><a href="{{route('myprofile')}}"><b>MyProfile</b></a>
+              @endif
+
                                  </li>
                         <!-- <div class="d-none d-md-block">
                            <a class="user-btn-sign-up edu-btn" href="{{route('signup')}}">Sign Up</a>

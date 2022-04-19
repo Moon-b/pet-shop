@@ -65,6 +65,7 @@ class PetProductController extends Controller
     }
 
     public function petproductupdate(Request $request, $id){
+        // dd($request->all());
         $request->validate([
             
             'pet_product_categories_id'=>'required',
@@ -72,11 +73,12 @@ class PetProductController extends Controller
             'pet_product_details'=>'required',
             'pet_product_price'=>'required',
             'pet_product_status'=>'required',
-        
+            'available_quantity'=>'required',
     
         ]);
-        // dd($request->all(),$id);
+       
         $petproducts = PetProduct::find($id);
+    
        
     $filename=$petproducts->pet_product_picture;
     if ($request->hasFile('pet_product_picture')) {
@@ -89,14 +91,16 @@ class PetProductController extends Controller
     }
         if ($petproducts) {
             $petproducts->update([
-                'pet_product_categories_id'=>$request->pet_product_categories_id,
+            'pet_product_categories_id'=>$request->pet_product_categories_id,
             'pet_product_name'=>$request->pet_product_name,
             'pet_product_details'=>$request->pet_product_details,
             'pet_product_picture'=>$filename,
             'pet_product_price'=>$request->pet_product_price,
             'pet_product_status'=>$request->pet_product_status,
+            'available_quantity'=>$request->available_quantity,
                 
             ]);
+            // dd($petproducts);
             return redirect()->route('PetProduct');
         } else {
             return redirect()->back();

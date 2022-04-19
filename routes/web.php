@@ -139,15 +139,24 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function (){
         Route::get('/order/view/{id}',[OrderViewController::class,'view'])->name('order.view');
         Route::get('/orderdetails',[OrderDetailsViewController::class,'orderdetails'])->name('OrderDetails');
         Route::get('/orderapprove/{order_id}',[OrderViewController::class,'orderapprove'])->name('Order.approve');
-
+        // Route::get('/ordercancel/{order_id}',[OrderViewController::class,'ordercancel'])->name('Order.cancel');
+        Route::get('update/orderstatus/{order_id}',[OrderViewController::class,'statusOrder'])->name('admin.order.cancel');
 
 
 
         Route::get('/post/receive',[PostReciveController::class,'postreceive'])->name('Postreceive');
         Route::get('/post/approve/{post_id}',[PostReciveController::class,'postapprove'])->name('Post.approve');
+        Route::get('/post/cancel/{post_id}',[PostReciveController::class,'postcancel'])->name('Post.cancel');
         Route::get('/post/receiver/{id}',[PostReciveController::class,'receiver'])->name('admin.receiver');
-        // Route::get('/postreceives',[PostReceiveController::class,'postreceives'])->name('Postreceives');
-        
+
+
+
+        //for post report
+        Route::get('/report',[UserController::class,'report'])->name('admin.report');
+        Route::get('/report/result',[UserController::class,'reportResult'])->name('admin.report.result');
+
+        Route::get('/orderreport',[UserController::class,'orderreport'])->name('admin.orderreport');
+        Route::get('/orderreport/result',[UserController::class,'orderreportResult'])->name('admin.orderreport.result');
     });
 
 
@@ -178,28 +187,37 @@ Route::post('/cart/update/{id}',[CartController::class,'updateCart'])->name('car
 
 Route::get('/myprofile',[MyProfileController::class,'myprofile'])->name('myprofile');
 Route::get('/mypost',[MyProfileController::class,'mypost'])->name('mypost');
+Route::get('/mypost/cancel/{id}',[MyProfileController::class,'mypostcancel'])->name('mypost.cancel');
 Route::get('/receiverinfo/{id}',[MyProfileController::class,'receiverinfo'])->name('receiverinfo');
 Route::get('/myorder',[MyProfileController::class,'myorder'])->name('myorder');
+Route::get('/invoice/{id}',[MyProfileController::class,'invoice'])->name('invoice');
 Route::get('/myorderdetails',[MyProfileController::class,'myorderdetails'])->name('myorderdetails');
+Route::get('/myprofile/edit/{id}',[MyProfileController::class,'myprofileedit'])->name('myprofile.edit');
+Route::put('/myprofile/update/{id}',[MyprofileController::class,'myprofileupdate'])->name('myprofile.update');
+Route::get('update/order/status/{order_id}',[MyProfileController::class,'cancelOrder'])->name('user.order.cancel');
+
+
+
 Route::get('/search/product/by/name',[ SerachController::class,'search'])->name('search');
 
 
 Route::group(['middleware'=>'auth'],function (){
 
-Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
-Route::post('/order/place',[OrderController::class,'orderPlace'])->name('order.place');
-Route::get('/douserlogout',[UserLoginController::class,'douserlogout'])->name('douserlogout');
-Route::get('/postcreate',[PostController::class,'postcreate'])->name('Post.create');
-Route::post('/postform',[PostController::class,'postform'])->name('Post.form');
-Route::get('/post/adopt/{id}',[PostController::class,'postadopt'])->name('Post.adopt');
-Route::get('/post/donate/{id}',[PostController::class,'postdonate'])->name('Post.donate');
+    Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
+    Route::post('/order/place',[OrderController::class,'orderPlace'])->name('order.place');
+    
+    Route::get('/douserlogout',[UserLoginController::class,'douserlogout'])->name('douserlogout');
+    Route::get('/postcreate',[PostController::class,'postcreate'])->name('Post.create');
+    Route::post('/postform',[PostController::class,'postform'])->name('Post.form');
+    Route::get('/post/adopt/{id}',[PostController::class,'postadopt'])->name('Post.adopt');
+    Route::get('/post/donate/{id}',[PostController::class,'postdonate'])->name('Post.donate');
 
 
 
-Route::get('/post',[PostController::class,'post'])->name('Post');
+    Route::get('/post',[PostController::class,'post'])->name('Post');
 
-Route::get('/post/view/{id}',[PostController::class,'postview'])->name('Post.view');
-Route::get('/post/adopt/{id}',[PostController::class,'postadopt'])->name('Post.adopt');
-Route::get('/post/donate/{id}',[PostController::class,'postdonate'])->name('Post.donate');
+    Route::get('/post/view/{id}',[PostController::class,'postview'])->name('Post.view');
+    Route::get('/post/adopt/{id}',[PostController::class,'postadopt'])->name('Post.adopt');
+    Route::get('/post/donate/{id}',[PostController::class,'postdonate'])->name('Post.donate');
 
 });

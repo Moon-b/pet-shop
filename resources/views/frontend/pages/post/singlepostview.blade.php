@@ -9,7 +9,12 @@
         @if(session()->has('message'))
             <p class="alert alert-success">{{session()->get('message')}}</p>
         @endif
+        <div class="product-item">
+            <a href="">
+                <img src="{{url('/uploads/'.$posts->picture)}}" alt="DFASF" style="height: 300px;">
+            </a>
 
+        </div>
       
     </div>
 

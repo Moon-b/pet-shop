@@ -11,18 +11,15 @@ use App\Http\Controllers\Controller;
 class PostController extends Controller
 {
     public function post(){
-        // dd($posts);
-        // $posts=Post::with('donate','petdonate')->get();
-        // dd($donationlists);
-        // $posts=Post::where('status','approved')->get();
         $posts=Post::where([
             ['status','approved'],
             ['recever_id',Null],
             ['user_id','!=',auth()->user()->id]
         ])->get();
+        return view('frontend.pages.post.post',compact('posts'));
+        
         // dd($posts);
 
-        return view('frontend.pages.post.post',compact('posts'));
     }
     public function postcreate(){
         // $customers = Customer::all();
@@ -31,7 +28,7 @@ class PostController extends Controller
         return view('frontend.pages.post.postform',compact('petcategories'));
     }
     public function postform (Request $request){
-        //  dd($request->all());   
+        //  dd($request->form_date);   
         // dd(auth()->user());
         $is_temp = 'no';
         if ($request->has('is_temporary')) {
@@ -49,7 +46,7 @@ class PostController extends Controller
             'title'=>$request->title,
             'details'=>$request->details,
             'type'=>$request->type,
-            'from_date'=>$request->from_date,
+            'from_date'=>$request->form_date,
             'to_date'=>$request->to_date,
             'is_temporary'=>$is_temp,
         ]);

@@ -37,7 +37,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Available Quantity</label>
-    <input required value="{{$petproducts->available_quantity}}"name ='available_quantity' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter available quantity">
+    <input required value="{{$petproducts->available_quantity}}" name ="available_quantity" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter available quantity">
    
   </div>
  

@@ -32,7 +32,7 @@
         <td>{{$post->id}}</td>
          <td>{{$post->post->name}}</td>
          <td>{{$post->post->email}}</td>
-        <td><img width="150px" src="{{url('/uploads',$post->user_image)}}" alt="not found"></td>
+        <td><img width="150px" src="{{url('/uploads',$user->user_image)}}" alt="not found"></td>
         <td>{{$post->post->user_address}}</td>
         <td>{{$post->post->user_country}}</td>
         <td>{{$post->post->user_city}}</td>

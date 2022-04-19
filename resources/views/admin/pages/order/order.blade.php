@@ -32,22 +32,39 @@
          <td>{{$singleorder->receiver_last_name}}</td>
          <td>{{$singleorder->receiver_email}}</td>
          <td>{{$singleorder->total}}</td>
+         <td>{{$singleorder->status}}</td>
+         <td>{{$singleorder->contact}}</td>
           
         <td>
           
-        <!-- <span class="btn btn-success">{{$singleorder->status}}</span> -->
+        {{-- <!-- <span class="btn btn-success">{{$singleorder->status}}</span> --> --}}
         @if($singleorder->status == 'pending')
           <a class='btn btn-success' href="{{route('Order.approve',$singleorder->id)}}">Approve</a>
-           <a class='btn btn-success' href="">Delete</a>
+           <a class='btn btn-success' href="{{route('admin.order.cancel',$singleorder->id)}}">Cancel</a>
       @endif
-</td>
+        </td> 
+       
+        {{-- <td>
+<form action="{{route('Order.approve',$singleorder->id)}}" method="POST">
+  {{-- @method('PUT') --}}
+  {{-- @csrf
+  <select name="status">
+      <option class="btn btn-primary" value="Confirm">Confirm</option>
+      <option class="btn btn-primary" value="Processing">Processing</option>
+      <option class="btn btn-primary" value="Delivery">Delivery</option>
+      <option class="btn btn-primary" value="Cancel">Cancel</option>
+      <option class="btn btn-primary" value="Received">Received</option>
+  </select>
+  <button class="btn btn-success"><i class="fa-solid fa-check-double"></i></button>
+</form>
+</td> --}} 
 
-<td>{{$singleorder->contact}}</td>
+
           <td>{{$singleorder->action}} 
           
         
         
-        <a class='btn btn-success' href="">Delete</a>
+        {{-- <a class='btn btn-success' href="">Delete</a> --}}
         <a class='btn btn-danger' href="{{route('order.view',$singleorder->id)}}">View</a>
         </td>
       </tr>

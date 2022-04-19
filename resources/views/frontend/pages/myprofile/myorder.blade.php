@@ -22,6 +22,8 @@
       <th scope="col"> 'total'</th>
       <th scope="col"> 'status'</th>
       <th scope="col">'contact'</th>
+      <th scope="col">'action'</th>
+
      
  
     </tr>
@@ -36,9 +38,20 @@
          <td>{{$data->total}}</td>
          <td>{{$data->status}}</td>
          <td>{{$data->contact}}</td>
+         @if($data->status == "pending")
+         <td><a href="{{route('user.order.cancel',$data->id)}}" class="btn btn-success">Cancel</a></td>
+         @endif
+      
+         @if($data->status == "approved")
+          <td><a href="{{route('invoice',$data->id)}}" class="btn btn-success">My Order Details</a></td>
       </tr>
+      @endif
+      @if($data->status == "pending")
+           <td><a href="{{route('invoice',$data->id)}}" class="btn btn-success">My Order Details</a></br></td>
+      </tr>
+      @endif
       @endforeach
-      <a href="" class="btn btn-success">My Order Details</a>
+     
   </tbody>
 </table>
   </div>

@@ -37,7 +37,7 @@
     <input required name ='status' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter status">
   </div> -->
   <div class="form-group">
-    <label for="exampleInputEmail1"> form date</label>
+    <label for="exampleInputEmail1"> from date</label>
     <input required name ='form_date' type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter form date">
 </div>
 <div class="form-group">
