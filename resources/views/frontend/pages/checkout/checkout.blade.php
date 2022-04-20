@@ -132,7 +132,8 @@
 
 
                 <hr class="mb-4">
-                <td> <button type="submit" class="btn btn-info">Place Order </button></td>
+                <td> <button type="submit" class="btn btn-info">Pay Now </button></td>
+                {{-- <td><a class='btn btn-success' href="{{route('cod')}}">COD</a></td> --}}
                 <!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Place Order</button> -->
             </form>
         </div>

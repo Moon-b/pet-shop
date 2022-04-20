@@ -226,6 +226,7 @@ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
     Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
     Route::post('/order/place',[OrderController::class,'orderPlace'])->name('order.place');
+    // Route::post('/cod', [OrderController::class, 'cod'])->name('COD');
     
     Route::get('/douserlogout',[UserLoginController::class,'douserlogout'])->name('douserlogout');
     Route::get('/postcreate',[PostController::class,'postcreate'])->name('Post.create');
