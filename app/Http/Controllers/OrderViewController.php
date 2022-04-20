@@ -24,7 +24,7 @@ class OrderViewController extends Controller
     }
     public function orderapprove($id){
         $order = Order::find($id)->update([
-            'status'=>'approved'
+            'order_status'=>'approved'
         ]);
         return redirect()->back();
     }
@@ -47,7 +47,7 @@ class OrderViewController extends Controller
                 }
             }
             $order ->update([
-                'status'=>'cancel'
+                'order_status'=>'cancel'
             ]);
             return redirect()->back();
         }

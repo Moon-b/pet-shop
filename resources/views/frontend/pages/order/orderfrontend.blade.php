@@ -4,7 +4,7 @@
 
 <div class="row" style="margin-top: 75px;">
 <!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> --> 
-<!-- <a href="{{route('DonationList.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Donation List</h2></a> -->
+{{-- <!-- <a href="{{route('DonationList.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Donation List</h2></a> --> --}}
 <a href= "" class="btn btn-success "  style="float: right;font-size:18px; "> Order Details</a>
   <div class="col-12">
   <table class="table">
@@ -31,10 +31,10 @@
          <td>{{$singleorder->receiver_email}}</td>
         <td>{{$singleorder->total}}</td>
 
-        @php
+        {{-- @php
           $date = date('Y-m-d', strtotime($singleorder->created_at));
-        @endphp
-        <td>{{$date}}</td>
+        @endphp --}}
+        {{-- <td>{{$date}}</td> --}}
           <td>{{$singleorder->action}}
           
         

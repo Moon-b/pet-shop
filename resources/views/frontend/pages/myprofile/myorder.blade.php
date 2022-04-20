@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('product')
-<h1>Order</h1>
+<h1>My Order</h1>
 
 <div class="row" style="margin-top: 75px;">
 <!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> --> 
@@ -14,15 +14,18 @@
     <tr>
     
            
-      <th scope="col">id</th>
-      <th scope="col"> 'receiver_first_name'</th>
+      <th scope="col">ID</th>
+      <th scope="col"> Receiver First Name</th>
       
-      <th scope="col">'receiver_last_name'</th>
-      <th scope="col"> 'receiver_email'</th>
-      <th scope="col"> 'total'</th>
-      <th scope="col"> 'status'</th>
-      <th scope="col">'contact'</th>
-      <th scope="col">'action'</th>
+      <th scope="col">Receiver Last Name</th>
+      <th scope="col"> Receiver Email</th>
+      <th scope="col">Tansaction ID</th>
+      <th scope="col"> Total</th>
+      <th scope="col"> Payment Status</th>
+      <th scope="col"> Order Status</th>
+      <th scope="col"> Contact</th>
+      
+      <th scope="col"> Action </th>
 
      
  
@@ -35,21 +38,29 @@
          <td>{{$data->receiver_first_name}}</td>
          <td>{{$data->receiver_last_name}}</td>
          <td>{{$data->receiver_email}}</td>
+         <td>{{$data->tran_id}}</td>
          <td>{{$data->total}}</td>
-         <td>{{$data->status}}</td>
+         <td>{{$data->payment_status}}</td>
+         <td>{{$data->order_status}}</td>
          <td>{{$data->contact}}</td>
-         @if($data->status == "pending")
+         @if($data->order_status == "pending" && $data->tran_id!=null)
          <td><a href="{{route('user.order.cancel',$data->id)}}" class="btn btn-success">Cancel</a></td>
          @endif
       
-         @if($data->status == "approved")
+         {{-- @if($data->status == "approved")
           <td><a href="{{route('invoice',$data->id)}}" class="btn btn-success">My Order Details</a></td>
       </tr>
-      @endif
-      @if($data->status == "pending")
+      @endif --}}
+      {{-- @if($data->status == "pending" && $data->status=="success" && $data->status=="approved") --}}
            <td><a href="{{route('invoice',$data->id)}}" class="btn btn-success">My Order Details</a></br></td>
       </tr>
-      @endif
+      {{-- @endif --}}
+      {{-- @if($data->tran_id!=null)
+      <td><a href="{{route('user.order.cancel',$data->id)}}" class="btn btn-success">Cancel</a></td>
+      @endif --}}
+ </tr>
+
+
       @endforeach
      
   </tbody>

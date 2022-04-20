@@ -11,14 +11,14 @@
   <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">name</th>
-      <th scope="col">email</th>
-      <th scope="col">user image</th>
-      <th scope="col">user address</th>
-      <th scope="col">user country</th>
-      <th scope="col">user_city</th>
-      <th scope="col">user_phone</th>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">User Image</th>
+      <th scope="col">User Address</th>
+      <th scope="col">User Country</th>
+      <th scope="col">User City</th>
+      <th scope="col">User Phone</th>
       
       
       

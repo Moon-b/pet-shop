@@ -74,14 +74,15 @@ public function logout()
         }
         if ($users) {
             $users->update([
-                'user_image'=>$request->user_image,
-                'user_first_name'=>$request->user_first_name,
-                'user_last_name'=>$request->user_last_name,
+                // dd($users);
+                'user_image'=>$filename,
+                'name'=>$request->name,
+                
                 'user_address'=>$request->user_address,
                 'user_country'=>$request->user_country,
                 'user_city'=>$request->user_city,
                 'user_phone'=>$request->user_phone,
-                'user_email'=>$request->user_email,
+                'email'=>$request->email,
                 
                 
             ]);

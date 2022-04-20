@@ -5,23 +5,23 @@
         @endif
  
 <div class="row">
-    <!-- <a href="{{route('mypost')}}" class="btn btn-info">My Post</a> -->
+    {{-- <!-- <a href="{{route('mypost')}}" class="btn btn-info">My Post</a> --> --}}
 </div>
 <div class="col-12" style="overflow-x: scroll;">
   <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">pet_categories_name</th>
-      <th scope="col">picture</th>
-      <th scope="col">title</th>
-      <th scope="col">details</th>
-      <th scope="col">type</th>
-      <th scope="col">from_date</th>
-      <th scope="col">to_date</th>
-      <th scope="col">is_temporary</th>
-      <th scope="col"> status</th>
-      <th scope="col">action</th>
+      <th scope="col">ID</th>
+      <th scope="col">Pet Categories Name</th>
+      <th scope="col">Picture</th>
+      <th scope="col">Title</th>
+      <th scope="col">Details</th>
+      <th scope="col">Type</th>
+      <th scope="col">From Date</th>
+      <th scope="col">To Date</th>
+      <th scope="col">Is Temporary</th>
+      <th scope="col"> Status</th>
+      <th scope="col">Action</th>
       
       <!-- <th scope="col">Action</th> -->
 

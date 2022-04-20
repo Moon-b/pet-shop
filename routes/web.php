@@ -22,6 +22,8 @@ use App\Http\Controllers\frontend\OrderController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\frontend\SerachController;
 
+use App\Http\Controllers\SslCommerzPaymentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -182,7 +184,7 @@ Route::get('/cart/clear',[CartController::class,'clearCart'])->name('cart.clear'
 Route::get('/cart/delete/{id}',[CartController::class,'deleteCart'])->name('cart.delete');
 Route::post('/cart/update/{id}',[CartController::class,'updateCart'])->name('cart.update');
 
-// Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
+
 
 
 Route::get('/myprofile',[MyProfileController::class,'myprofile'])->name('myprofile');
@@ -202,6 +204,25 @@ Route::get('/search/product/by/name',[ SerachController::class,'search'])->name(
 
 
 Route::group(['middleware'=>'auth'],function (){
+
+
+
+// SSLCOMMERZ Start
+
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index'])->name('PAY');
+
+
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+
+//SSLCOMMERZ END
+
+
+
+
 
     Route::get('/checkout',[OrderController::class,'checkout'])->name('checkout');
     Route::post('/order/place',[OrderController::class,'orderPlace'])->name('order.place');

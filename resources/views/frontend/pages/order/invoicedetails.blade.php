@@ -6,8 +6,9 @@
             <div class="card-header">
                 Invoice
                 <strong>{{$order->created_at}}</strong>
-                <span class="float-right"> <strong>Status:</strong> {{$order->status}}</span>
-
+                
+                <span class="float-right"> <strong>Payment Status:</strong> {{$order->payment_status}}</span></br>
+                <span class="float-right"> <strong>Order Status:</strong> {{$order->order_status}}</span>
             </div>
             <div class="card-body">
                 <div class="row mb-4">
@@ -104,11 +105,15 @@
     </div>
 
     <div class="col-md-4">
+ 
+      <div style="display: flex; justify-content:end; padding-left: 1200px; margin-bottom: 10px;">
 
-        <button class="btn btn-success" onclick="printInvoice('invoice')">
+        <button class="btn btn-success" onclick="printInvoice('invoice')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M6 19H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-3v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm0-2v-1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1h2V9H4v8h2zM8 4v3h8V4H8zm0 13v3h8v-3H8zm-3-7h3v2H5v-2z"/></svg></button>
+    </div>
+        {{-- <button class="btn btn-success" onclick="printInvoice('invoice')">
            
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M448 192H64C28.65 192 0 220.7 0 256v96c0 17.67 14.33 32 32 32h32v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h32c17.67 0 32-14.33 32-32V256C512 220.7 483.3 192 448 192zM384 448H128v-96h256V448zM432 296c-13.25 0-24-10.75-24-24c0-13.27 10.75-24 24-24s24 10.73 24 24C456 285.3 445.3 296 432 296zM128 64h229.5L384 90.51V160h64V77.25c0-8.484-3.375-16.62-9.375-22.62l-45.25-45.25C387.4 3.375 379.2 0 370.8 0H96C78.34 0 64 14.33 64 32v128h64V64z"/></svg></button>
-    </div>
+    </div> --}} 
 
 
     <script type="text/javascript">

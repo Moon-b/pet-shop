@@ -12,15 +12,17 @@
     <tr>
     
            
-      <th scope="col">id</th>
-      <th scope="col"> 'receiver_first_name'</th>
+      <th scope="col">ID</th>
+      <th scope="col"> Receiver First Name</th>
       
-      <th scope="col">'receiver_last_name'</th>
-      <th scope="col"> 'receiver_email'</th>
-      <th scope="col"> 'total'</th>
-      <th scope="col"> 'status'</th>
-      <th scope="col">'contact'</th>
-      <th scope="col">action</th>
+      <th scope="col">Receiver Last Name</th>
+      <th scope="col"> Receiver Email</th>
+      <th scope="col">Transaction ID
+      <th scope="col"> Total</th>
+      <th scope="col"> Payment Status</th>
+      <th scope="col"> Order Status</th>
+      <th scope="col"> Contact</th>
+      <th scope="col"> Action</th>
  
     </tr>
   </thead>
@@ -31,18 +33,27 @@
          <td>{{$singleorder->receiver_first_name}}</td>
          <td>{{$singleorder->receiver_last_name}}</td>
          <td>{{$singleorder->receiver_email}}</td>
+         <td>{{$singleorder->tran_id}}</td>
          <td>{{$singleorder->total}}</td>
-         <td>{{$singleorder->status}}</td>
+         <td>{{$singleorder->payment_status}}</td>
+         <td>{{$singleorder->order_status}}</td>
+         {{-- <td>{{$singleorder->status}}</td> --}}
          <td>{{$singleorder->contact}}</td>
           
         <td>
           
         {{-- <!-- <span class="btn btn-success">{{$singleorder->status}}</span> --> --}}
-        @if($singleorder->status == 'pending')
-          <a class='btn btn-success' href="{{route('Order.approve',$singleorder->id)}}">Approve</a>
-           <a class='btn btn-success' href="{{route('admin.order.cancel',$singleorder->id)}}">Cancel</a>
+        @if($singleorder->order_status == 'pending')
+          <a class='btn btn-success' href="{{route('Order.approve',$singleorder->id)}}">Confirmation</a>
       @endif
+
+          {{-- @if($singleorder->status == 'pending' && $singleorder->tran_id==null) --}}
+           <a class='btn btn-success' href="{{route('admin.order.cancel',$singleorder->id)}}">Cancel</a>
+      {{-- @endif --}}
+
         </td> 
+        
+       
        
         {{-- <td>
 <form action="{{route('Order.approve',$singleorder->id)}}" method="POST">

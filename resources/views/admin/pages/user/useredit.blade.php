@@ -4,7 +4,7 @@
     @method('PUT')
 @csrf
 
-<!-- <input type="hidden" value="{{$customers->id}}" name="id"> -->
+{{-- <!-- <input type="hidden" value="{{$customers->id}}" name="id"> --> --}}
 <form>
   
 <div class="form-group">
@@ -19,7 +19,7 @@
   </div>
   <!-- <div class="form-group">
     <label for="exampleInputEmail1">user_last_name</label>
-    <input value="{{$users->user_last_name}}"name ='user_last_name' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter user last name">
+    {{-- <input value="{{$users->user_last_name}}"name ='user_last_name' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter user last name"> --}}
    
   </div> -->
   <div class="form-group">
@@ -44,7 +44,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">email</label>
-    <input value="{{$users->user_email}}"name ='user_email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter user email">
+    <input value="{{$users->email}}"name ='email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter user email">
    
   </div>
   <div class="form-group">

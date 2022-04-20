@@ -99,7 +99,7 @@ class MyProfileController extends Controller
                 }
             }
             $order ->update([
-                'status'=>'cancel'
+                'order_status'=>'cancel'
             ]);
             return redirect()->back();
         }
@@ -107,7 +107,7 @@ class MyProfileController extends Controller
         public function mypostcancel($id){
             // dd($id);
             $post = Post::find($id)->update([
-                'status'=>'cancel'
+                'order_status'=>'cancel'
             ]);
             return redirect()->back();
         }

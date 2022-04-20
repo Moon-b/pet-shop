@@ -16,14 +16,16 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
+            $table->string('tran_id');
             $table->string('receiver_first_name');
             $table->string('receiver_last_name');
             $table->string('receiver_email');
             $table->string('receiver_address');
             $table->double('total',10,2);
-            $table->string('status')->default('pending');
+            $table->string('payment_status')->default("pending");
+            $table->string('order_status')->default("pending");
             $table->string('contact');
-            $table->string('payment_method')->default('COD');
+            // $table->string('payment_method')->default('COD');
             $table->timestamps();
         });
     }

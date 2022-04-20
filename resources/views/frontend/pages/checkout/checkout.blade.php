@@ -30,6 +30,7 @@
                         <td>{{$cartData['name']}}</td>
                         <td>{{$cartData['price']}}</td>
                         <td>{{$cartData['subtotal']}}</td>
+                        {{-- <td> <button type="Cancel" class="btn btn-info">Cancel Order </button></td> --}}
                         </tr>
                         
                     </tbody>
@@ -40,16 +41,16 @@
                                     {{--                            <div class="col-sm-2 hidden-xs">--}}
                                     {{--                                <img src="http://placehold.it/100x100" alt="..." class="img-responsive" /></div>--}}
                                     <div class="col-sm-10">
-                                        <h4 class="nomargin">{{$cartData['name']}}</h4>
+                                        {{-- <h4 class="nomargin">{{$cartData['name']}}</h4> --}}
                                     </div>
                                 </div>
                             </td>
-                            <td data-th="Price">{{$cartData['price']}} .BDT</td>
+                            {{-- <td data-th="Price">{{$cartData['price']}} .BDT</td> --}}
 
-                            <td data-th="Subtotal" class="text-center">{{$cartData['subtotal']}} .BDT</td>
+                            {{-- <td data-th="Subtotal" class="text-center">{{$cartData['subtotal']}} .BDT</td> --}}
                             <td class="actions" data-th="">
 
-                                <a href="{{route('cart.delete',$key)}}"  style="color: white" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i>Delete Cart</a>
+                                {{-- <a href="{{route('cart.delete',$key)}}"  style="color: white" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i>Delete Cart</a> --}}
                             </td>
                         </tr> -->
                     @endforeach
@@ -69,7 +70,7 @@
         </div>
         <div class="col-md-6 order-md-1" style="margin-top: 100px;">
             <h4 class="mb-3">Billing address</h4>
-            <form action="{{route('order.place')}}" method="POST" class="needs-validation">
+            <form action="{{route('PAY')}}" method="POST" class="needs-validation">
                 @csrf
 
                 <div class="row">
@@ -121,17 +122,17 @@
 
                 <h4 class="mb-3">Payment</h4>
 
-                <div class="d-block my-3">
+                {{-- <div class="d-block my-3">
                     <div class="custom-control custom-radio">
                         <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
                         <label class="custom-control-label" for="credit">Cash On Delivery (COD)</label>
                     </div>
 
-                </div>
+                </div> --}}
 
 
                 <hr class="mb-4">
-                <td> <button type="submit" class="btn btn-info">Place Order </button>
+                <td> <button type="submit" class="btn btn-info">Place Order </button></td>
                 <!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Place Order</button> -->
             </form>
         </div>

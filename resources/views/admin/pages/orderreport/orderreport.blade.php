@@ -10,14 +10,14 @@
     <tr>
     
            
-      <th scope="col">id</th>
-      <th scope="col"> 'receiver_first_name'</th>
+      <th scope="col">ID</th>
+      <th scope="col"> 'Receiver Fast Name'</th>
       
-      <th scope="col">'receiver_last_name'</th>
-      <th scope="col"> 'receiver_email'</th>
-      <th scope="col"> 'total'</th>
-      <th scope="col"> 'status'</th>
-      <th scope="col">'contact'</th>
+      <th scope="col">'Receiver Last_Name'</th>
+      <th scope="col"> 'Receiver Email'</th>
+      <th scope="col"> 'Total'</th>
+      <th scope="col"> 'Status'</th>
+      <th scope="col">'Contact'</th>
       <th scope="col">action</th>
  
     </tr>

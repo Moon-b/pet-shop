@@ -6,7 +6,8 @@
             <div class="card-header">
                 Invoice
                 <strong>{{$order->created_at}}</strong>
-                <span class="float-right"> <strong>Status:</strong> {{$order->status}}</span>
+                <span class="float-right"> <strong> Payment Status:</strong> {{$order->payment_status}}</span></br>
+                <span class="float-right"> <strong>Order Status:</strong> {{$order->order_status}}</span>
 
             </div>
             <div class="card-body">
