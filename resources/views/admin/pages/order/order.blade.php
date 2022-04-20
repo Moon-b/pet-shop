@@ -5,7 +5,8 @@
 <div class="row" style="margin-top: 75px;">
 <!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> --> 
 <!-- <a href="{{route('DonationList.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Donation List</h2></a> -->
-<a href="{{route('OrderDetails')}}" class="btn btn-success "  style="float: right;font-size:18px; "> Order Details</a>
+{{-- <a href="{{route('OrderDetails')}}" class="btn btn-success "  style="float: right;font-size:18px; "> Order Details</a> --}}
+<a href="{{route('OrderDetails')}}" class="btn btn-success" style="float: right; width: 28%"><span style="font-size: 15px;">Order Details</span></a>
   <div class="col-12">
   <table class="table">
   <thead>
@@ -34,7 +35,7 @@
          <td>{{$singleorder->receiver_last_name}}</td>
          <td>{{$singleorder->receiver_email}}</td>
          <td>{{$singleorder->tran_id}}</td>
-         <td>{{$singleorder->total}}</td>
+         <td>{{$singleorder->total}}.BDT</td>
          <td>{{$singleorder->payment_status}}</td>
          <td>{{$singleorder->order_status}}</td>
          {{-- <td>{{$singleorder->status}}</td> --}}
@@ -45,11 +46,19 @@
         {{-- <!-- <span class="btn btn-success">{{$singleorder->status}}</span> --> --}}
         @if($singleorder->order_status == 'pending')
           <a class='btn btn-success' href="{{route('Order.approve',$singleorder->id)}}">Confirmation</a>
-      @endif
+    
 
           {{-- @if($singleorder->status == 'pending' && $singleorder->tran_id==null) --}}
            <a class='btn btn-success' href="{{route('admin.order.cancel',$singleorder->id)}}">Cancel</a>
-      {{-- @endif --}}
+      @endif
+      @if($singleorder->order_status == 'approved')
+          {{-- <a class='btn btn-success' href="{{route('Order.approve',$singleorder->id)}}">Confirmation</a> --}}
+    
+
+          {{-- @if($singleorder->status == 'pending' && $singleorder->tran_id==null) --}}
+           <a class='btn btn-success' href="{{route('admin.order.cancel',$singleorder->id)}}">Cancel</a>
+      @endif
+
 
         </td> 
         

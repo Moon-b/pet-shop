@@ -14,7 +14,7 @@
                            <nav id="mobile-menu">
                               <ul>
                                  <li class=""><a href="{{route('home')}}">Home</a></li>
-                                 <li class=""><a href="">Pet Products</a></li>
+                                 <li class=""><a href="{{route('home')}}">Pet Products</a></li>
                                  {{-- <li class=""><a href="">Pets</a></li> --}}
                                  <!-- <li class=""><a href="{{url('cart')}}">Add to cart</a></li> -->
                                  @if(auth()->user())

@@ -2,19 +2,19 @@
 @section('content')
 <h1><b><u>Pet Product</u></b> </h1>
 <a href="{{route('PetProduct.form')}}" class="btn btn-success"  style="float: right;font-size:18px; ">Add New Pet Product </a>
-<table class="table table-borderless table-dark">
+<table class="table table-borderless ">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">pet_product_categories_name</th>
-      <th scope="col">pet_product_name</th>
-      <th scope="col">pet_product_picture</th>
-      <th scope="col">pet_product_details</th>
-      <th scope="col">pet_product_price</th>
-      <th scope="col">available_quantity</th>
-      <th scope="col">pet_product_status</th>
-      <th scope="col">edit</th>
-      <th scope="col">delete</th>
+      <th scope="col">ID</th>
+      <th scope="col"> Categories Name</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Picture</th>
+      <th scope="col">Details</th>
+      <th scope="col">Price</th>
+      <th scope="col">Available Quantity</th>
+      <th scope="col">Pet Product Status</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
       <!-- <th scope="col">view</th> -->
     </tr>
   </thead>

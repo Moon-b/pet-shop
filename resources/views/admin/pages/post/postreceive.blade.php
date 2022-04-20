@@ -7,20 +7,20 @@
   <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">pet_name</th>
-      <th scope="col">picture</th>
+      <th scope="col">ID</th>
+      <th scope="col">Pet Name</th>
+      <th scope="col">Picture</th>
       
-      <th scope="col">title</th>
-      <th scope="col">details</th>
-      <th scope="col">type</th>
-      <th scope="col">from date</th>
-      <th scope="col">to date</th>
+      <th scope="col">Title</th>
+      <th scope="col">Details</th>
+      <th scope="col">Type</th>
+      <th scope="col">From Date</th>
+      <th scope="col">To Date</th>
      
-      <th scope="col">is temporary</th>
+      <th scope="col">Is Temporary</th>
       <th scope="col">Post Status</th>
 
-      <th scope="col">action</th>
+      <th scope="col">Action</th>
       
       
  

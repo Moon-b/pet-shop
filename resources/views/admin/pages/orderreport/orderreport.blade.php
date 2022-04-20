@@ -11,13 +11,13 @@
     
            
       <th scope="col">ID</th>
-      <th scope="col"> 'Receiver Fast Name'</th>
+      <th scope="col"> Receiver Fast Name</th>
       
-      <th scope="col">'Receiver Last_Name'</th>
-      <th scope="col"> 'Receiver Email'</th>
-      <th scope="col"> 'Total'</th>
-      <th scope="col"> 'Status'</th>
-      <th scope="col">'Contact'</th>
+      <th scope="col">Receiver Last_Name</th>
+      <th scope="col"> Receiver Email</th>
+      <th scope="col"> Total</th>
+      <th scope="col"> Status</th>
+      <th scope="col">Contact</th>
       <th scope="col">action</th>
  
     </tr>

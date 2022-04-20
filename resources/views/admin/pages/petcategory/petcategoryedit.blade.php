@@ -21,11 +21,11 @@
   <div class="form-group">
     <label for="exampleInputEmail1">Details</label>
     <input value="{{$petcategories->details}}" name ='details' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter details">
-    <div class="form-group">
+    {{-- <div class="form-group">
     <label for="exampleInputEmail1">Status</label>
     <input value="{{$petcategories->status}}" name ='status' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter status">
   
-  </div>
+  </div> --}}
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection

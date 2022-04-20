@@ -26,6 +26,7 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span>Reviews (32)</span>
+                            {{-- <a href="{{route('cart.add',$product->id)}}" class="btn btn-success">Add to Cart</a> --}}
                         </div>
                     </div>
                 </div>

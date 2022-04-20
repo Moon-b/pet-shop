@@ -5,22 +5,23 @@
 <div class="row" style="margin-top: 75px;">
 <!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> --> 
 <!-- <a href="{{route('DonationList.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Donation List</h2></a> -->
-<a href="{{route('user.form')}}" class="btn btn-success "  style="float: right;font-size:18px; ">Add New user </a>
+{{-- <a href="{{route('user.form')}}" class="btn btn-success "  style="float: right;font-size:18px; ">Add New user </a> --}}
+<a href="{{route('user.form')}}" class="btn btn-success" style="float: right; width: 28%"><span style="font-size: 15px;">Add New User</span></a>
   <div class="col-12">
   <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">user_image</th>
-      <th scope="col">name</th>
+      <th scope="col">ID</th>
+      <th scope="col">User Image</th>
+      <th scope="col">Name</th>
       <!-- <th scope="col">user_last_name</th> -->
-      <th scope="col">user_address</th>
-      <th scope="col">user_country</th>
-      <th scope="col">user_city</th>
-      <th scope="col">user_phone</th>
-      <th scope="col">email</th>
-      <th scope="col">roll</th>
-      <th scope="col">action</th>
+      <th scope="col">User Address</th>
+      <th scope="col">User Country</th>
+      <th scope="col">User City</th>
+      <th scope="col">User Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+      <th scope="col">Action</th>
  
     </tr>
   </thead>

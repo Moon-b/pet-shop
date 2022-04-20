@@ -39,7 +39,7 @@
          <td>{{$data->receiver_last_name}}</td>
          <td>{{$data->receiver_email}}</td>
          <td>{{$data->tran_id}}</td>
-         <td>{{$data->total}}</td>
+         <td>{{$data->total}}.BDT</td>
          <td>{{$data->payment_status}}</td>
          <td>{{$data->order_status}}</td>
          <td>{{$data->contact}}</td>

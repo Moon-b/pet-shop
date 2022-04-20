@@ -15,11 +15,11 @@
   <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">pet_categories_name</th>
-      <th scope="col">details</th>
-      <th scope="col">status</th>
-      <th scope="col">action</th>
+      <th scope="col">Id</th>
+      <th scope="col">Categories Name</th>
+      <th scope="col">Details</th>
+      {{-- <th scope="col">Status</th> --}}
+      <th scope="col">Action</th>
        
     </tr>
   </thead>
@@ -29,7 +29,7 @@
         <td>{{$singlepetcategory->id}}</td>
          <td>{{$singlepetcategory->pet_categories_name}}</td>
         <td>{{$singlepetcategory->details}}</td>
-        <td>{{$singlepetcategory->status}}</td>
+        {{-- <td>{{$singlepetcategory->status}}</td> --}}
         <td>{{$singlepetcategory->action}}
         <a  class='btn btn-primary' href="{{route('PetCategory.edit',$singlepetcategory->id)}}">Edit</a>  
         

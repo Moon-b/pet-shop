@@ -108,7 +108,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                    <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                    <td><a href="{{route('home')}}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                     <td colspan="2" class="hidden-xs"></td>
                     
                     <td class="hidden-xs text-center"><strong> Total </strong>
@@ -119,7 +119,9 @@
                 </td>
                 <td><a href="{{route('cart.clear')}}" class="btn btn-danger"> Clear Cart</a></td>
                     <td colspan="" class="hidden-xs"></td>
+                    @if(auth()->user())
                     <td><a href="{{route('checkout')}}" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+                    @endif
                 </tr>
                 </tfoot>
             </table>
