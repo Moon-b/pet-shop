@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('content')
-<h1><b><u>Pet Product Category</u></b></h1>
+<h1><b>Pet Product Category</b></h1>
 <div class="row" style="margin-top: 75px;">
 <!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> -->
 <!-- <a href="{{route('PetProductCategory.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> -->

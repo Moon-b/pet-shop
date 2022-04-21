@@ -19,7 +19,7 @@ class PetProductCategoryController extends Controller
     PetProductCategory::create([
       'pet_product_categories_name'=>$request->pet_product_categories_name,
       'details'=>$request->details,
-      'status'=>$request->status,
+     
       
 
   ]);
@@ -48,7 +48,7 @@ if($petproductcategories){
 $petproductcategories->update([
   'pet_product_categories_name'=>$request->pet_product_categories_name,
   'details'=>$request->details,
-  'status'=>$request->status,
+ 
 
 ]);
  return redirect()->route(route:'PetProductCategory');

@@ -28,6 +28,7 @@ class PetProductController extends Controller
             'pet_product_picture'=>'image',
             'pet_product_price'=>'required',
             'pet_product_status'=>'required',
+            'available_quantity'=>'required',
         
     
         ]);
@@ -48,6 +49,7 @@ class PetProductController extends Controller
             'pet_product_picture'=>$filename,
             'pet_product_price'=>$request->pet_product_price,
             'pet_product_status'=>$request->pet_product_status,
+            'available_quantity'=>$request->available_quantity,
 
         ]);
         return redirect()->route(route:'PetProduct');

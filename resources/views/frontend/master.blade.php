@@ -60,10 +60,10 @@ https://templatemo.com/tm-546-sixteen-clothing
 
     @include('frontend.partials.header')
     
-    @include('frontend.partials.banner')
+    {{-- @include('frontend.partials.banner') --}}
 
    
-    <!-- @yield('slider') -->
+     @yield('slider') 
 
     <div class="latest-products">
       <div class="container">

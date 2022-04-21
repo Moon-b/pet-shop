@@ -43,11 +43,16 @@
                                         <span class="btn btn-danger">{{$error}}</span></p>
                                 @endforeach
                             @endif
-
-                            @if(session()->has('message'))
+                            @if(session('message'))
+                            <div style="background-color:#7f1d1d ;">
+                                <p style="text-align: center; padding: 30px; font-size: 30px; font-weight: bold;">{!! session('message') !!}</p>
+                            </div>
+                            @endif
+                        
+                            {{-- @if(session()->has('message'))
                                     <p>
                                         <span class="btn btn-danger">{{session()->get('message')}}</span></p>
-                                @endif
+                                @endif --}}
 <input type="submit" value="Log In" class="btn btn-block btn-primary">
 </form>
 </div>

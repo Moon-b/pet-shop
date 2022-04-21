@@ -14,7 +14,7 @@
                     <table class="table">
                     <thead>
                         <tr>
-                        <th scope="col"></th>
+                        <th scope="col">Product ID</th>
                         <th scope="col">Product Name</th>
                         <th scope="col">Subtotal</th>
                         <th scope="col">Total</th>
@@ -32,28 +32,11 @@
                         <td>{{$cartData['subtotal']}}</td>
                         {{-- <td> <button type="Cancel" class="btn btn-info">Cancel Order </button></td> --}}
                         </tr>
-                        
+                        @endforeach
                     </tbody>
                     </table>
-                        <!-- <tr>
-                            <td data-th="Product">
-                                <div class="row">
-                                    {{--                            <div class="col-sm-2 hidden-xs">--}}
-                                    {{--                                <img src="http://placehold.it/100x100" alt="..." class="img-responsive" /></div>--}}
-                                    <div class="col-sm-10">
-                                        {{-- <h4 class="nomargin">{{$cartData['name']}}</h4> --}}
-                                    </div>
-                                </div>
-                            </td>
-                            {{-- <td data-th="Price">{{$cartData['price']}} .BDT</td> --}}
-
-                            {{-- <td data-th="Subtotal" class="text-center">{{$cartData['subtotal']}} .BDT</td> --}}
-                            <td class="actions" data-th="">
-
-                                {{-- <a href="{{route('cart.delete',$key)}}"  style="color: white" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i>Delete Cart</a> --}}
-                            </td>
-                        </tr> -->
-                    @endforeach
+                        
+                  
 
                 @else
                     <tr>

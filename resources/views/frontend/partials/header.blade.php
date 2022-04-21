@@ -6,7 +6,7 @@
                   <div class="col-xl-9 col-lg-7 col-md-5 col-sm-9 col-9">
                      <div class="header-left d-flex align-items-center">
                         <div class="header-logo">
-                           <a  href="index.html"><img style="height: 60px; " src="{{url('image/p.jpg')}}" alt="Pet Shop BD"></a>
+                           <a  href="index.html"><img style="height: 90px;width:100px " src="{{url('image/p.jpg')}}" alt="Pet Shop BD"></a>
                         </div>
                         
 
@@ -14,7 +14,7 @@
                            <nav id="mobile-menu">
                               <ul>
                                  <li class=""><a href="{{route('home')}}">Home</a></li>
-                                 <li class=""><a href="{{route('home')}}">Pet Products</a></li>
+                                 {{-- <li class=""><a href="{{route('home')}}">Pet Products</a></li> --}}
                                  {{-- <li class=""><a href="">Pets</a></li> --}}
                                  <!-- <li class=""><a href="{{url('cart')}}">Add to cart</a></li> -->
                                  @if(auth()->user())
@@ -93,7 +93,7 @@
               @if (auth()->user())
                   
                         
-                        <li class=""><a href="{{route('myprofile')}}"><b>MyProfile</b></a>
+                        <li class="" style="padding-left: 10px;"><a href="{{route('myprofile')}}"><b style="font-size: 22px;">MyProfile</b></a>
               @endif
 
                                  </li>

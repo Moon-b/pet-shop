@@ -1,6 +1,15 @@
 @extends('frontend.master')
 
 @section('product')
+{{-- @if(session()->has('message'))
+<p class="alert alert-success">{{session()->get('message')}}</p>
+@endif --}}
+
+    @if(session('message'))
+    <div style="background-color: #fef08a; margin-top: 60px;">
+        <p style="text-align: center; padding: 30px; font-size: 30px; font-weight: bold;">{!! session('message') !!}</p>
+    </div>
+    @endif
 
     <style type="text/css">
         .table>tbody>tr>td,
@@ -77,15 +86,15 @@
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price">{{$cartData['price']}} BDT</td>
+                    <td data-th="Price">{{$cartData['price']}} .BDT</td>
                     <td data-th="Quantity">
                     <form action="{{route('cart.update',$key)}}" method="post">
                             @csrf
-                        <input name="quantity" type="number" class="form-control text-center" value="{{$cartData['quantity']}}">
+                        <input min="1" name="quantity" type="number" class="form-control text-center" value="{{$cartData['quantity']}}">
                         <button type="submit" class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
                         </form>
                     </td>
-                    <td data-th="Subtotal" class="text-center">{{$cartData['subtotal']}} BDT</td>
+                    <td data-th="Subtotal" class="text-center">{{$cartData['subtotal']}} .BDT</td>
                     <td class="actions" data-th="">
                   
                         <!-- <button class="btn btn-info btn-sm"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M5.463 4.433A9.961 9.961 0 0 1 12 2c5.523 0 10 4.477 10 10 0 2.136-.67 4.116-1.81 5.74L17 12h3A8 8 0 0 0 6.46 6.228l-.997-1.795zm13.074 15.134A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12c0-2.136.67-4.116 1.81-5.74L7 12H4a8 8 0 0 0 13.54 5.772l.997 1.795z"/></svg></i></button> -->
@@ -119,9 +128,9 @@
                 </td>
                 <td><a href="{{route('cart.clear')}}" class="btn btn-danger"> Clear Cart</a></td>
                     <td colspan="" class="hidden-xs"></td>
-                    @if(auth()->user())
+                    {{-- @if(auth()->user()) --}}
                     <td><a href="{{route('checkout')}}" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
-                    @endif
+                    {{-- @endif --}}
                 </tr>
                 </tfoot>
             </table>

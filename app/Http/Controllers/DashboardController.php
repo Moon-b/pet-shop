@@ -14,7 +14,8 @@ class DashboardController extends Controller
     public function dashboard()
     {
         $total_order=Order::all()->count();
-        $today_order=Order::where('created_at',Carbon::now())->get()->count();
+        $today_order=Order::whereDate('created_at', Carbon::today())->get()->count();
+
         // dd($today_order);
 
         $total_user=User::where('roll','user')->count();

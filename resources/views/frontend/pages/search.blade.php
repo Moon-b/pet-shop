@@ -1,5 +1,6 @@
 @extends('frontend.master')
 @section('product')
+<div class="row" style="margin-top: 75px;">
 <div class="row">
     @foreach($product as $data)
     <div class="col-md-3">
@@ -14,5 +15,6 @@
         </div>
     </div>
     @endforeach
+</div>
 </div>
 @endsection 

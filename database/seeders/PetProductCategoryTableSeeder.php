@@ -16,25 +16,25 @@ class PetProductCategoryTableSeeder extends Seeder
         PetProductCategory::create ([
             'pet_product_categories_name'=>'Pet Toys',
             'details'=>'Durable toy consisting of three levels of exciting play,Great fun for your pets.',
-            'status'=>'available',
+           
            
         ]);
         
         PetProductCategory::create ([
             'pet_product_categories_name'=>'Pet Food',
             'details'=>'Feed your growing explorer an ultra-high protein diet to fuel his adventures',
-            'status'=>'not available',
+            
            
         ]);
         PetProductCategory::create ([
             'pet_product_categories_name'=>'Pet Treats ',
             'details'=>'Zero grains,gluten,wheat,corn,soy,potatoes,paultry by- product meals',
-            'status'=>'available',
+      
         ]);
         PetProductCategory::create ([
             'pet_product_categories_name'=>'Pet Pharmacy',
             'details'=>'Prevent heartworm disease by eliminating the tissue stage of heartworm larvae',
-            'status'=>'not available',
+           
            
         ]);
     }

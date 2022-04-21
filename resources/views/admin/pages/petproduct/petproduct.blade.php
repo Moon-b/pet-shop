@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('content')
-<h1><b><u>Pet Product</u></b> </h1>
+<h1><b>Pet Product</b> </h1>
 <a href="{{route('PetProduct.form')}}" class="btn btn-success"  style="float: right;font-size:18px; ">Add New Pet Product </a>
 <table class="table table-borderless ">
   <thead>

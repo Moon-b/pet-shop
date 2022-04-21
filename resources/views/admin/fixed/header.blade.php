@@ -10,7 +10,8 @@
                
                
                 <!-- logo end --> 
-                <div class="page-logo mt-0"><img width="50px" src="{{url('/image/p.jpg')}}"  alt="product image"> 
+                <div class="page-logo mt-0">
+                     <p style="font-size: 24px; font-weight: 500;">Pet Shop Bd</p> 
                 </div>
                 
                 <!-- start mobile menu -->

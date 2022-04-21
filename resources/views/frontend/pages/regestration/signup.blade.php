@@ -468,21 +468,26 @@
                                         <span class="btn btn-danger">{{$error}}</span></p>
                                 @endforeach
                             @endif
+                            @if(session('message'))
+    <div style="background-color: #fef08a;">
+        <p style="text-align: center; padding: 30px; font-size: 30px; font-weight: bold;">{!! session('message') !!}</p>
+    </div>
+    @endif
 
-                            @if(session()->has('message'))
+                            {{-- @if(session()->has('message'))
                                     <p>
                                         <span class="btn btn-danger">{{session()->get('message')}}</span></p>
-                                @endif
+                                @endif --}}
 <div class="row row-space">
 <div class="col-2">
 <div class="input-group">
-<label class="label"> user_image</label>
+<label class="label"> User Image</label>
 <input  class="input--style-4" type="file" name="user_image">
 </div>
 </div>
 <div class="col-2">
 <div class="input-group">
-<label class="label"> name</label>
+<label class="label"> Name</label>
 <input required class="input--style-4" type="text" name="name">
 </div>
 </div>
@@ -517,42 +522,42 @@
 <div class="row row-space">
 <div class="col-2">
 <div class="input-group">
-<label class="label">user_country</label>
+<label class="label">User Country</label>
  <input  required class="input--style-4" type="text" name="user_country">
 </div>
 </div>
 <div class="row row-space">
 <div class="col-2">
 <div class="input-group">
-<label class="label">user_address</label>
+<label class="label">User Address</label>
  <input  required class="input--style-4" type="text" name="user_address">
 </div>
 </div>
 <div class="row row-space">
 <div class="col-2">
 <div class="input-group">
-<label class="label">user_city</label>
+<label class="label">User City</label>
  <input  required class="input--style-4" type="text" name="user_city">
 </div>
 </div>
 <div class="row row-space">
 <div class="col-2">
 <div class="input-group">
-<label class="label">user_phone</label>
+<label class="label">User Phone</label>
  <input  required class="input--style-4" type="number" name="user_phone">
 </div>
 </div>
 <div class="row row-space">
 <div class="col-2">
 <div class="input-group">
-<label class="label">email</label>
+<label class="label">Email</label>
  <input  required class="input--style-4" type="email" name="email">
 </div>
 </div>
 <div class="row row-space">
 <div class="col-2">
 <div class="input-group">
-<label class="label">password</label>
+<label class="label">Password</label>
  <input  required class="input--style-4" type="password" name="password">
 </div>
 </div>

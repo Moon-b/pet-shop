@@ -1,16 +1,27 @@
 
 @extends('frontend.master')
 @section('product')
-<h1><u>Thanks For Your Response</u></h1>
+<h1 style="margin-top: 60px; padding-bottom: 30px;">Thanks For Your Response</h1>
 <form action="{{route('Post.form')}}" method="POST"enctype="multipart/form-data">
 @csrf
-<div class="form-group">
+{{-- <div class="form-group">
     <label for="petadopt">Pet Category Name</label>
-    <select class="form-control"name="pet_category" id="">
+    <select class="form-control"name="pet_category" id="petadopt">
     @foreach($petcategories as $singlepetcategory)
         <option value="{{$singlepetcategory->id}}">{{$singlepetcategory->pet_categories_name}}</option>
     @endforeach
     </select>
+</div> --}}
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">pet category name</label>
+  </div>
+  <select class="custom-select" name="pet_category" id="inputGroupSelect01">
+    @foreach($petcategories as $singlepetcategory)
+    <option value="{{$singlepetcategory->id}}">{{$singlepetcategory->pet_categories_name}}</option>
+@endforeach
+  </select>
 </div>
 <div class="form-group">
     <label for="exampleInputEmail1">Picture</label>

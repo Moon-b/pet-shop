@@ -41,7 +41,7 @@
                         <thead>
                         <tr>
                             <th class="center">#</th>
-                            <!-- <th>Item</th> -->
+                            <th class="left"> Order ID</th>
                             <th class="left"> Name</th>
                             <th class="left">Unit Price</th>
                             <th class="left">Quantity</th>
@@ -53,6 +53,7 @@
                         @foreach($order->details as $data)
                         <tr>
                             <td class="center">{{$data->id}}</td>
+                            <td class="left">{{$data->order_id}}</td>
                             <td class="left strong">{{$data->product->pet_product_name}}</td>
                             <td class="left">{{$data->unit_price}} .BDT</td>
                             <td class="left">{{$data->quantity}}</td>
@@ -78,13 +79,13 @@
                                 </td>
                                 <td class="right">{{$order->total}} .BDT</td>
                             </tr>
-
+{{-- 
                             <tr>
                                 <td class="left">
                                     <strong>VAT (10%)</strong>
                                 </td>
                                 <td class="right">{{$order->total*10/100}} .BDT</td>
-                            </tr>
+                            </tr> --}}
                             <tr>
                                 <td class="left">
                                     <strong>Total</strong>

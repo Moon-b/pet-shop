@@ -21,7 +21,7 @@ class PetCategoryController extends Controller
         PetCategory::create([
             'pet_categories_name'=>$request->pet_categories_name,
             'details'=>$request->details,
-            'status'=>$request->status,
+         
             
 
         ]);
@@ -47,7 +47,7 @@ class PetCategoryController extends Controller
     $petcategories->update([
         'pet_categories_name'=>$request->pet_categories_name,
             'details'=>$request->details,
-            'status'=>$request->status,
+       
         
     
     ]);

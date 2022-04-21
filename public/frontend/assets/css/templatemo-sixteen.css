@@ -353,7 +353,7 @@ header .navbar {
 }
 
 .banner .text-content h4 {
-	color: #f33f3f;
+	color: #f5f0f0;
 	font-size: 22px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -403,9 +403,9 @@ header .navbar {
 
 /* Latest Produtcs */
 
-.latest-products {
+/* .latest-products {
 	margin-top: 100px;
-}
+} */
 
 .latest-products .section-heading a {
 	float: right;

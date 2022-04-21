@@ -13,7 +13,12 @@ class OrderController extends Controller
 {
     public function checkout()
     {
-        return view('frontend.pages.checkout.checkout');
+        if (auth()->check()) {
+            return view('frontend.pages.checkout.checkout'); 
+        }
+        else {
+            return redirect()->route('home')->with('error','You need to login first...!');
+        }
     }
     public function orderPlace(Request  $request)
     {

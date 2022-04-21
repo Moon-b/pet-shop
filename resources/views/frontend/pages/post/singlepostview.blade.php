@@ -6,8 +6,13 @@
     <!-- <div class="col-md-2"></div> -->
     <div class="col-md-4" style="margin-top: 100px;">
 
-        @if(session()->has('message'))
+        {{-- @if(session()->has('message'))
             <p class="alert alert-success">{{session()->get('message')}}</p>
+        @endif --}}
+        @if(session('message'))
+        <div style="background-color: #fef08a;">
+            <p style="text-align: center; padding: 30px; font-size: 30px; font-weight: bold;">{!! session('message') !!}</p>
+        </div>
         @endif
         <div class="product-item">
             <a href="">

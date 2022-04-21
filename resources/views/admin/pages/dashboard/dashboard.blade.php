@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        {{-- <div class="col-md-3">
             <div class="card">
                 <h5 class="card-header"style="background-color: #AED6F1 ">Sale (Today)</h5>
                 <div class="card-body">
@@ -24,7 +24,7 @@
                 </div>
 
             </div>
-        </div>
+        </div> --}}
         
         <div class="col-md-3" >
             <h5 class="card-header" style="background-color:   #D4AC0D  ">Total User</h5>

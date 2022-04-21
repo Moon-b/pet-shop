@@ -18,7 +18,7 @@ class CreatePetCategoriesTable extends Migration
             $table->id ();
             $table->string('pet_categories_name');
             $table->string('details');
-            $table->string('status');
+
             $table->timestamps();
         });
     }

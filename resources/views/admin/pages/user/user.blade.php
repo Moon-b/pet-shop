@@ -5,8 +5,8 @@
 <div class="row" style="margin-top: 75px;">
 <!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> --> 
 <!-- <a href="{{route('DonationList.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Donation List</h2></a> -->
-{{-- <a href="{{route('user.form')}}" class="btn btn-success "  style="float: right;font-size:18px; ">Add New user </a> --}}
-<a href="{{route('user.form')}}" class="btn btn-success" style="float: right; width: 28%"><span style="font-size: 15px;">Add New User</span></a>
+{{-- <a href="{{route('user.form')}}" class="btn btn-success "  style="float: right;font-size:18px; ">Add New user </a>
+<a href="{{route('user.form')}}" class="btn btn-success" style="float: right; width: 28%"><span style="font-size: 15px;">Add New User</span></a> --}}
   <div class="col-12">
   <table class="table">
   <thead>

@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('content')
-<h1>Order</h1>
+<h1>Order Lists</h1>
 
 <div class="row" style="margin-top: 75px;">
 <!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> --> 
