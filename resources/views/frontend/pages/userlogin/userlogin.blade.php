@@ -24,11 +24,11 @@
     @csrf
 <div class="form-group first">
 <label for="username">Email</label>
-<input name="email" type="text" class="form-control" placeholder="your-email@gmail.com" id="email">
+<input required name="email" type="text" class="form-control" placeholder="your-email@gmail.com" id="email">
 </div>
 <div class="form-group last mb-3">
 <label for="password">Password</label>
-<input name="password" type="password" class="form-control" placeholder="Your Password" id="password">
+<input required name="password" type="password" class="form-control" placeholder="Your Password" id="password">
 </div>
 <div class="d-flex mb-5 align-items-center">
 <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>

@@ -1,7 +1,8 @@
 @extends('frontend.master')
 @section('product')
-<h1>Posts</h1>
+
 <div class="row" style="margin-top: 75px;">
+  <h1>Posts</h1>
 @if(session()->has('message'))
             <p class="alert alert-success">{{session()->get('message')}}</p>
         @endif
