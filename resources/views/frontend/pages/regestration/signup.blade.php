@@ -482,7 +482,7 @@
 <div class="col-2">
 <div class="input-group">
 <label class="label"> User Image</label>
-<input  class="input--style-4" type="file" name="user_image">
+<input required  class="input--style-4" type="file" name="user_image">
 </div>
 </div>
 <div class="col-2">

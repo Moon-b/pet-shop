@@ -2,6 +2,11 @@
 @extends('frontend.master')
 @section('product')
 <h1 style="margin-top: 60px; padding-bottom: 30px;">Thanks For Your Response</h1>
+@if(session('message'))
+<div style="background-color: #fef08a; margin-top: 60px;">
+    <p style="text-align: center; padding: 30px; font-size: 30px; font-weight: bold;">{!! session('message') !!}</p>
+</div>
+@endif
 <form action="{{route('Post.form')}}" method="POST"enctype="multipart/form-data">
 @csrf
 {{-- <div class="form-group">
@@ -25,7 +30,7 @@
 </div>
 <div class="form-group">
     <label for="exampleInputEmail1">Picture</label>
-    <input required name ='pet_img' type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter donation form date">
+    <input  name ='pet_img' type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter donation form date">
   </div>
 <div class="form-group">
     <label for="exampleInputEmail1">TItle</label>
@@ -59,7 +64,7 @@
     <input required name ='to_date' type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter to date">
 </div>
 <div class="form-group">
-<input required type="checkbox" id="vehicle1" name="is_temporary" value="yes">
+<input  type="checkbox" id="vehicle1" name="is_temporary" value="yes">
   <label for="vehicle1"> Is Temporary</label><br>
 </div>
     <!-- <label for="exampleInputEmail1">Donation Form Status</label>

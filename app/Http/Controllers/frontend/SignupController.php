@@ -15,6 +15,20 @@ class SignupController extends Controller
     }
     public function userpost (Request $request){
         // dd($request->all());
+        $request->validate([
+            'user_image'=>'required',
+                'name'=>'required',
+                // 'customer_last_name'=>$request->customer_last_name,
+                'user_address'=>'required',
+                'user_country'=>'required',
+                'user_city'=>'required',
+                'user_phone'=>'required',
+                'email'=>'required',
+                'password'=>'required',
+           
+        
+    
+        ]);
         $filename = null;
         if ($request->hasFile('user_image')) {
             $file=$request->file('user_image');
@@ -36,3 +50,7 @@ class SignupController extends Controller
         return redirect()->route('home');
     }
 }
+
+    
+
+

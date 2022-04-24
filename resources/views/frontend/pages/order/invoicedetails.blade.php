@@ -1,6 +1,11 @@
 @extends('frontend.master')
 
 @section('product')
+@if(session('message'))
+<div style="background-color: #fef08a; margin-top: 60px;">
+    <p style="text-align: center; padding: 30px; font-size: 30px; font-weight: bold;">{!! session('message') !!}</p>
+</div>
+@endif
     <div class="container">
         <div class="card"  id="invoice">
             <div class="card-header">

@@ -22,6 +22,19 @@ class OrderController extends Controller
     }
     public function orderPlace(Request  $request)
     {
+
+        $request->validate([
+          
+        'receiver_first_name' =>'required',
+        'receiver_last_name' =>'required',
+        'receiver_email' =>'required',
+        'receiver_address' =>'required',
+        // 'total' =>array_sum(array_column(session()->get('cart'),'subtotal')),
+        'contact'=>'required',
+       
+    
+
+    ]);
     //    dd($request->all());
         $cart = session('cart');
         // dd($cart);

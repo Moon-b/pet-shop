@@ -1,7 +1,13 @@
 @extends('frontend.master')
 @section('product')
-   @if(session()->has('message'))
+   {{-- @if(session()->has('message'))
             <p class="alert alert-success">{{session()->get('message')}}</p>
+        @endif --}}
+
+        @if(session('message'))
+        <div style="background-color: #fef08a; margin-top: 60px;">
+            <p style="text-align: center; padding: 30px; font-size: 30px; font-weight: bold;">{!! session('message') !!}</p>
+        </div>
         @endif
      
  

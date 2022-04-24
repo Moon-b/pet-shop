@@ -5,9 +5,15 @@
 <div class="row" style="margin-top: 75px;">
   <h1>My Order</h1>
 <!-- <a href="#" class="btn btn-success" style="float: right;"><h2>Add New Pet Product Category</h2></a> --> 
-<!-- <a href="{{route('DonationList.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Donation List</h2></a> -->
+{{-- <!-- <a href="{{route('DonationList.form')}}" class="btn btn-success" style="float: right;"><h2>Add New Donation List</h2></a> -->
 @if(session()->has('message'))
             <p class="alert alert-success">{{session()->get('message')}}</p>
+        @endif --}}
+
+        @if(session('message'))
+        <div style="background-color: #fef08a; margin-top: 60px;">
+            <p style="text-align: center; padding: 30px; font-size: 30px; font-weight: bold;">{!! session('message') !!}</p>
+        </div>
         @endif
   <div class="col-12">
   <table class="table">

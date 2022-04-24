@@ -30,6 +30,22 @@ class PostController extends Controller
     public function postform (Request $request){
         //  dd($request->form_date);   
         // dd(auth()->user());
+        // $request->validate([
+           
+        //         // 'user_id'=>auth()->user()->id,  //returns all info about user. only id is selected.
+        //     // 'pet_category_id'=>$request->pet_category,
+        //     'picture'=>'required',
+        //     'title'=>'required',
+        //     'details'=>'required',
+        //     'type'=>'required',
+        //     'from_date'=>'required',
+        //     'to_date'=>'required',
+        //     // 'is_temporary'=>'required',
+           
+        
+    
+        // ]);
+   
         $is_temp = 'no';
         if ($request->has('is_temporary')) {
             $is_temp = $request->is_temporary;

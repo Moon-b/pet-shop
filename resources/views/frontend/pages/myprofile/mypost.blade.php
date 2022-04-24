@@ -1,7 +1,12 @@
 @extends('frontend.master')
 @section('product')
-   @if(session()->has('message'))
+   {{-- @if(session()->has('message'))
             <p class="alert alert-success">{{session()->get('message')}}</p>
+        @endif --}}
+        @if(session('message'))
+        <div style="background-color: #fef08a; margin-top: 60px;">
+            <p style="text-align: center; padding: 30px; font-size: 30px; font-weight: bold;">{!! session('message') !!}</p>
+        </div>
         @endif
  
 <div class="row">
@@ -21,6 +26,9 @@
       <th scope="col">To Date</th>
       <th scope="col">Is Temporary</th>
       <th scope="col"> Status</th>
+      {{-- @if($post->recever_id != null) --}}
+      {{-- <th scope="col"> Receiver Details</th> --}}
+      {{-- @endif --}}
       <th scope="col">Action</th>
       
       <!-- <th scope="col">Action</th> -->
@@ -44,7 +52,7 @@
         <td>{{$post->status}}</td></br>
 
         @if($post->recever_id != null)
-        <td><a href="{{route('receiverinfo',$post->id)}}" class="btn btn-info">View</a></td>
+        <td><a href="{{route('receiverinfo',$post->id)}}" class="btn btn-info">Receiver Details</a></td>
         @endif
         {{-- @if($post->status != "cancel")
         

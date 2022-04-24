@@ -21,7 +21,7 @@
 
 
 
-<h1>Latest Pet Product</h2>
+<h1> Pet Products</h2>
     @foreach($product as $data)
                 <div class="col-md-4">
                     <div class="product-item">
